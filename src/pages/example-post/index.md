@@ -1,7 +1,7 @@
 ---
-title: Electron With React 101
+title: Example Post
 date: '2019-06-01'
-spoiler: Getting an application running with Electron and React
+spoiler: Example Post
 categories:
   - javascript
 tags:

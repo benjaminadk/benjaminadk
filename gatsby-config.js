@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Benjamin Brooke`,
-    description: `A software developer's blog`,
+    description: `A JavaScript Developer's blog`,
     author: `Benjamin Brooke`,
+    lang: 'en',
     social: {
       email: `benjaminadk@gmail.com`,
       twitter: `https://twitter.com/BenjaminBrooke3`,
@@ -24,7 +25,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Benjamin Brooke`,
-        short_name: `starter`,
+        short_name: `Benjamin Brooke`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,

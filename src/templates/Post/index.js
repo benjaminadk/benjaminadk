@@ -5,13 +5,17 @@ import Layout from '../../components/Layout'
 import { PostTitle, Markdown } from './styles'
 
 export default function Post({ data }) {
+  const {
+    frontmatter: { title, date },
+    html
+  } = data.markdownRemark
   return (
-    <Layout>
+    <Layout page={title}>
       <PostTitle>
-        <div className='title'>{data.markdownRemark.frontmatter.title}</div>
-        <div className='date'>{formatDate(data.markdownRemark.frontmatter.date)}</div>
+        <div className='title'>{title}</div>
+        <div className='date'>{formatDate(date)}</div>
       </PostTitle>
-      <Markdown dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+      <Markdown dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   )
 }
