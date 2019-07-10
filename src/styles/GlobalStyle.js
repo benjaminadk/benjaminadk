@@ -144,8 +144,12 @@ pre {
  */
 
 a {
-  background-color: transparent;
-}
+    background-color: transparent;
+    color: ${theme.grey[8]};
+    &:hover {
+      color: ${theme.textColor};
+    }
+  }
 
 /**
  * Add the correct text decoration in Edge 18-, IE, and Safari.

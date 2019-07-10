@@ -13,6 +13,7 @@ module.exports = {
     links: [
       { text: 'Posts', href: '/' },
       { text: 'Projects', href: '/projects' },
+      { text: 'Visualizations', href: '/visualizations' },
       { text: 'About', href: '/about' }
     ]
   },
