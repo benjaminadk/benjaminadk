@@ -2,6 +2,7 @@
 title: Example Post
 date: '2019-06-01'
 spoiler: Example Post
+thumbnail: '../../images/javascript.png'
 categories:
   - javascript
 tags:
@@ -78,4 +79,8 @@ Right aligned columns
 
 ## Images
 
-![Minion](https://octodex.github.com/images/minion.png)
+![example](editor-1.png)
+
+<img style="width: 100px;" src='camera-new.svg'>
+
+![gif](shots.gif)

@@ -16,10 +16,11 @@
     "url": "https://github.com/benjaminadk/benjaminadk.git"
   },
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
     "start": "npm run develop",
-    "serve": "gatsby serve"
+    "develop": "gatsby develop",
+    "build": "npm run clean && gatsby build",
+    "serve": "gatsby serve",
+    "clean": "rm -rf public && rm -rf .cache"
   },
   "dependencies": {
     "babel-plugin-styled-components": "1.10.1",

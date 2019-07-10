@@ -24,6 +24,13 @@ export const query = graphql`
             spoiler
             tags
             categories
+            thumbnail {
+              childImageSharp {
+                fixed(width: 200, height: 200) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
           fields {
             slug

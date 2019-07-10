@@ -28,8 +28,8 @@ module.exports = {
         name: `Benjamin Brooke`,
         short_name: `Benjamin Brooke`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#333`,
+        theme_color: `#333`,
         display: `minimal-ui`,
         icon: `static/logo-512x512.png`
       }
@@ -42,10 +42,18 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`
+      }
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           `gatsby-remark-responsive-iframe`,
+          `gatsby-remark-copy-linked-files`,
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
@@ -56,12 +64,6 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 800
-            }
-          },
-          {
-            resolve: `gatsby-remark-copy-linked-files`,
-            options: {
-              ignoreFileExtensions: []
             }
           },
           {

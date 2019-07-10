@@ -15,10 +15,18 @@ export const Container = styled.div`
 `
 
 export const StyledLink = styled(Link)`
+  display: flex;
+  align-items: center;
   color: ${p => p.theme.grey[8]};
   font-size: 1.2rem;
   padding-bottom: 0.5rem;
   &:hover {
     color: ${p => p.theme.textColor};
+  }
+  &:hover img {
+    filter: none;
+  }
+  img {
+    filter: grayscale();
   }
 `
