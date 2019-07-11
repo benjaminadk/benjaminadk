@@ -14,10 +14,7 @@ export default function PostList({ posts }) {
           } = post.node
           return (
             <StyledLink key={title} to={slug}>
-              <Img
-                style={{ width: '30px', height: '30px', marginRight: '10px' }}
-                fixed={thumbnail.childImageSharp.fixed}
-              />
+              <Img className='thumbnail' fixed={thumbnail.childImageSharp.fixed} />
               <span>{title}</span>
             </StyledLink>
           )

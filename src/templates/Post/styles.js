@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const PostTitle = styled.div`
   width: ${p => p.theme.maxWidth};
-  margin: 0 auto;
+  margin: 10px auto 0;
   .title {
     font-size: 40px;
     color: ${p => p.theme.textColor};
@@ -16,7 +16,7 @@ export const PostTitle = styled.div`
 
 export const Markdown = styled.div`
   max-width: ${p => p.theme.maxWidth};
-  margin: 0 auto;
+  margin: 40px auto 40px;
   p {
     font-family: ${p => p.theme.textFont};
     font-size: 18px;
@@ -72,10 +72,15 @@ export const Markdown = styled.div`
   table tr:nth-child(2n) {
     background-color: ${p => p.theme.grey[1]};
   }
+  hr {
+    border: 1px solid ${p => p.theme.grey[2]};
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
   .filename {
     background: ${p => p.theme.filenameColor};
     padding: 10px 15px;
-    font-size: 18px;
+    font-size: 16px;
     color: white;
     font-family: ${p => p.theme.code.font};
     border-top-left-radius: 4px;
@@ -96,6 +101,7 @@ export const Markdown = styled.div`
     color: ${p => p.theme.code.text};
     background: none;
     font-family: ${p => p.theme.code.font};
+    font-size: 14px !important;
     font-feature-settings: normal;
     text-align: left;
     white-space: pre;

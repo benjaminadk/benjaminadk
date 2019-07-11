@@ -26,6 +26,11 @@ export const StyledLink = styled(Link)`
   &:hover img {
     filter: none;
   }
+  .thumbnail {
+    width: 30px !important;
+    height: 30px !important;
+    margin-right: 10px !important;
+  }
   img {
     filter: grayscale();
   }
