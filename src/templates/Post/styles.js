@@ -41,6 +41,10 @@ export const Markdown = styled.div`
   ul {
     list-style-type: circle;
   }
+  li {
+    font-family: ${p => p.theme.textFont};
+    font-size: 18px;
+  }
   blockquote {
     border-left: 4px solid ${p => p.theme.grey[5]};
     padding: 0 15px;

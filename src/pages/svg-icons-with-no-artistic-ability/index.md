@@ -156,6 +156,7 @@ Out final markup looks like this:
 - Add a `width` attribute to the SVG
 
 ```jsx
+// Cleaned up SVG markup
 <svg width='200' viewBox='0 0 50 50'>
   <path d='M15.362 4.281a23 23 0 0 1 32.478 23.07l-22.898-2.16z' fill='#e94435' />
   <path d='M47.882 27.292a23 23 0 0 1-36.496 15.97l13.638-18.52z' fill='#35a755' />
@@ -170,11 +171,18 @@ Out final markup looks like this:
 
 - `Svg` component will take `name` as _props_
 - The `name` prop will tell `Svg` what markup to return
+- Use `React.Fragment` shorthand `<></>` to return output
 
 <div class='filename'>Svg.js</div>
 
 ```js
-function Svg({ name }) {
+import React from 'react'
+
+// Pass any additional props via destructuring ...rest
+function Svg({ name, ...rest }) {
+  // Helper function to return inner svg elements
+  // Each icon has its own case
+  // Throws error if no name prop is present
   const getPath = n => {
     switch (n) {
       case 'google':
@@ -191,8 +199,14 @@ function Svg({ name }) {
     }
   }
 
-  return <svg viewBox='0 0 50 50'>{getPath(name)}</svg>
+  return (
+    <svg viewBox='0 0 50 50' {...rest}>
+      {getPath(name)}
+    </svg>
+  )
 }
+
+export default Svg
 ```
 
 - Add as many icons as you need
