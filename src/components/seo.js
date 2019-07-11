@@ -2,9 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-function SEO({ data, page }) {
-  const { title, description, author, lang } = data.site.siteMetadata
-  const meta = []
+function SEO({ title, description, author, lang, page, meta }) {
   return (
     <Helmet
       htmlAttributes={{
@@ -48,6 +46,15 @@ function SEO({ data, page }) {
       ].concat(meta)}
     />
   )
+}
+
+SEO.defaultProps = {
+  lang: 'en',
+  title: 'Benjamin Brooke',
+  author: 'Benjamin Brooke',
+  description: '',
+  page: 'Home',
+  meta: []
 }
 
 export default SEO

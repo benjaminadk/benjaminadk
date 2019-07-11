@@ -5,7 +5,7 @@ import PostList from '../components/PostList'
 
 export default function Homepage({ data }) {
   return (
-    <Layout page='JavaScript Developer'>
+    <Layout>
       <PostList posts={data.posts.edges} />
     </Layout>
   )

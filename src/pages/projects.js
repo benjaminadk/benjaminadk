@@ -5,7 +5,7 @@ import projects from '../data/projects'
 
 export default function Projects() {
   return (
-    <Layout page='Projects'>
+    <Layout>
       <ProjectList projects={projects} />
     </Layout>
   )

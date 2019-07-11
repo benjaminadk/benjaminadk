@@ -4,7 +4,7 @@ import VisualizationList from '../components/VisualizationList'
 
 export default function Visualizations() {
   return (
-    <Layout page='Visualizations'>
+    <Layout>
       <VisualizationList />
     </Layout>
   )

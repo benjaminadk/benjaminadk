@@ -1,8 +1,8 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { ThemeProvider } from 'styled-components'
-import SEO from '../seo'
 import GlobalStyle from '../../styles/GlobalStyle'
+import SEO from '../seo'
 import Header from '../Header'
 import Footer from '../Footer'
 import { StyledPage, Main } from './styles'
@@ -31,13 +31,13 @@ const query = graphql`
   }
 `
 
-export default function Layout({ page, children }) {
+export default function Layout({ children }) {
   return (
     <StaticQuery
       query={query}
       render={data => (
         <>
-          <SEO data={data} page={page} />
+          <SEO />
           <GlobalStyle />
           <ThemeProvider theme={theme}>
             <StyledPage>

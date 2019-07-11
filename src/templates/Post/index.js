@@ -10,7 +10,7 @@ export default function Post({ data }) {
     html
   } = data.markdownRemark
   return (
-    <Layout page={title}>
+    <Layout>
       <PostTitle>
         <div className='title'>{title}</div>
         <div className='date'>{formatDate(date)}</div>
