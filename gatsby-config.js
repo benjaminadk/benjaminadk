@@ -23,18 +23,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Benjamin Brooke`,
-        short_name: `Benjamin Brooke`,
-        start_url: `/`,
-        background_color: `#333`,
-        theme_color: `#333`,
-        display: `minimal-ui`,
-        icon: `static/logo-512x512.png`
-      }
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
@@ -76,15 +64,43 @@ module.exports = {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: 'language-',
-              inlineCodeMarker: '>',
+              inlineCodeMarker: '@',
               showLineNumbers: false
             }
           }
         ]
       }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Benjamin Brooke`,
+        short_name: `Benjamin Brooke`,
+        start_url: `/`,
+        background_color: `#333`,
+        theme_color: `#333`,
+        display: `minimal-ui`,
+        icon: `static/logo-512x512.png`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-143670697-1',
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: false,
+        // Setting this parameter is optional
+        anonymize: true,
+        // Setting this parameter is also optional
+        respectDNT: true,
+        // Avoids sending pageview hits from custom paths
+        exclude: [],
+        // Percentage of users tracked
+        sampleRate: 100,
+        // Percentage of user to track site speed with
+        siteSpeedSampleRate: 10,
+        cookieDomain: 'example.com'
+      }
     }
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ]
 }
