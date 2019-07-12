@@ -12,8 +12,11 @@ export default function Homepage({ data }) {
 }
 
 export const query = graphql`
-  query BlogIndexQuery {
-    posts: allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+  query PostsQuery {
+    posts: allMarkdownRemark(
+      filter: { fields: { slug: { regex: "/^/posts/" } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       totalCount
       edges {
         node {

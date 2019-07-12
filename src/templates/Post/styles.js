@@ -7,10 +7,19 @@ export const PostTitle = styled.div`
     font-size: 40px;
     color: ${p => p.theme.textColor};
   }
-  .date {
-    font-size: 18px;
+  .sub-title {
+    display: flex;
+    align-items: center;
     color: ${p => p.theme.grey[8]};
     margin-top: -10px;
+    .date {
+      margin-right: 10px;
+      font-size: 18px;
+    }
+    .ttr {
+      margin-left: 10px;
+      font-size: 16px;
+    }
   }
 `
 

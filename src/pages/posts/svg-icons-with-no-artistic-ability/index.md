@@ -2,7 +2,7 @@
 title: SVG Icons With Minimal Artistic Ability
 date: '2019-07-10'
 spoiler: Create nice looking icons with minmial artistic ability
-thumbnail: '../../images/react.png'
+thumbnail: '../../../images/react.png'
 categories:
   - javascript
 tags:
@@ -153,7 +153,7 @@ An SVG looks great no matter what the size
 Out final markup looks like this:
 
 - Drop all the `xmln` stuff since we are using these with **inline HTML**
-- Add a `width` attribute to the SVG
+- Add a `width` attribute to the SVG or use **CSS** to style
 
 ```jsx
 // Cleaned up SVG markup

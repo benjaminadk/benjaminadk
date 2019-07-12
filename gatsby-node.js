@@ -18,7 +18,7 @@ exports.createPages = ({ graphql, actions }) => {
     resolve(
       graphql(`
         {
-          allMarkdownRemark {
+          posts: allMarkdownRemark(filter: { fields: { slug: { regex: "/^/posts/" } } }) {
             edges {
               node {
                 fields {
@@ -28,6 +28,18 @@ exports.createPages = ({ graphql, actions }) => {
                   title
                   tags
                   categories
+                }
+              }
+            }
+          }
+          projects: allMarkdownRemark(filter: { fields: { slug: { regex: "/^/projects/" } } }) {
+            edges {
+              node {
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
                 }
               }
             }
@@ -42,7 +54,7 @@ exports.createPages = ({ graphql, actions }) => {
         const tagSet = new Set()
         const categorySet = new Set()
 
-        const posts = result.data.allMarkdownRemark.edges
+        const posts = result.data.posts.edges
 
         posts.sort((a, b) => {
           return compareDesc(new Date(a.node.frontmatter.date), new Date(b.node.frontmatter.date))
@@ -75,6 +87,18 @@ exports.createPages = ({ graphql, actions }) => {
               nextSlug: nextNode.fields.slug,
               prevTitle: prevNode.frontmatter.title,
               prevSlug: prevNode.fields.slug
+            }
+          })
+        })
+
+        const projects = result.data.projects.edges
+
+        projects.forEach((edge, index) => {
+          createPage({
+            path: edge.node.fields.slug,
+            component: path.resolve(`./src/templates/Project/index.js`),
+            context: {
+              slug: edge.node.fields.slug
             }
           })
         })
