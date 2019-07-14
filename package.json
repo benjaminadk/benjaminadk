@@ -15,10 +15,6 @@
     "type": "git",
     "url": "https://github.com/benjaminadk/benjaminadk.git"
   },
-  "engines": {
-    "node": "10.13.0",
-    "npm": "6.10.0"
-  },
   "scripts": {
     "start": "npm run develop",
     "develop": "gatsby develop",
