@@ -13,18 +13,18 @@ Articles, Projects & Visualizations
 
 ## Articles
 
-| Date     | Title                              | Link |
-| :------- | :--------------------------------- | :--: |
-| 07-10-19 | SVG Icons With No Artistic Ability |      |
+| Date       | Title                              |                                       Link                                        |
+| :--------- | :--------------------------------- | :-------------------------------------------------------------------------------: |
+| 2019-07-10 | SVG Icons With No Artistic Ability | [Link](https://benjaminadk.netlify.com/posts/svg-icons-with-no-artistic-ability/) |
 
 ## Projects
 
 ## Visualizations
 
-| Date     | Title             | Link |
-| :------- | :---------------- | :--: |
-| 07-13-19 | High School Clock |      |
+| Date       | Title             | Link |
+| :--------- | :---------------- | :--: |
+| 2019-07-13 | High School Clock |      |
 
 ## Tech Stack
 
-Created with [Gatsby]()
+Created with [Gatsby](https://www.gatsbyjs.org/)
