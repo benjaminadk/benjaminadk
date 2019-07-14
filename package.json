@@ -23,6 +23,7 @@
     "clean": "rm -rf public && rm -rf .cache"
   },
   "dependencies": {
+    "@benjaminadk/high-school-clock": "https://api.observablehq.com/@benjaminadk/high-school-clock.tgz?v=3",
     "@observablehq/runtime": "4.3.0",
     "babel-plugin-styled-components": "1.10.1",
     "date-fns": "2.0.0-alpha.34",
