@@ -100,6 +100,11 @@ export const Markdown = styled.div`
     border-top-right-radius: 4px;
     margin-bottom: -10px;
   }
+  .center {
+    width: 100%;
+    display: grid;
+    justify-items: center;
+  }
   .gatsby-highlight {
     margin: 10px 0px;
     background: ${p => p.theme.highlightColor};

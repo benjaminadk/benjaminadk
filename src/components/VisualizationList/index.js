@@ -1,7 +1,7 @@
 import React from 'react'
-import { Container } from './styles'
+import { Container, StyledLink } from './styles'
 
-export default function VisualizationList() {
+export default function VisualizationList({ visualizations }) {
   return (
     <Container>
       <div className='title'>Visualizations</div>
@@ -12,6 +12,11 @@ export default function VisualizationList() {
           </span>{' '}
           Under Construction
         </div>
+        {visualizations.map(vis => (
+          <StyledLink key={vis.title} to={`/visualizations/${vis.slug}`}>
+            {vis.title}
+          </StyledLink>
+        ))}
       </div>
     </Container>
   )
