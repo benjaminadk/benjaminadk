@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { graphql } from 'gatsby'
 import { Runtime, Inspector } from '@observablehq/runtime'
-import notebook from 'high-school-clock'
+import notebook from './notebook'
 import Helmet from 'react-helmet'
 import Layout from '../../../components/Layout'
 import { PostTitle, Markdown } from '../../../templates/Post/styles'
