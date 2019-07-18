@@ -1,1 +1,1 @@
-export default minutes => `${new Array(minutes / 3).fill('☕').join(' ')} ${minutes} min`
+export default minutes => `${new Array(Math.ceil(minutes / 3)).fill('☕').join(' ')} ${minutes} min`
