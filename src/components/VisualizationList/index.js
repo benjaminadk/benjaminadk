@@ -6,12 +6,6 @@ export default function VisualizationList({ visualizations }) {
     <Container>
       <div className='title'>Visualizations</div>
       <div className='visualizations'>
-        <div>
-          <span role='img' aria-label='construction'>
-            🚧
-          </span>{' '}
-          Under Construction
-        </div>
         {visualizations.map(vis => (
           <StyledLink key={vis.title} to={`/visualizations/${vis.slug}`}>
             {vis.title}

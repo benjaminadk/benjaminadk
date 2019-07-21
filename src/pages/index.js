@@ -24,7 +24,6 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
-            spoiler
             tags
             categories
             thumbnail {

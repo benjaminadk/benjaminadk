@@ -1,7 +1,6 @@
 ---
 title: SVG Icons With Minimal Artistic Ability
 date: '2019-07-10'
-spoiler: Create nice looking icons with minmial artistic ability
 thumbnail: '../../../images/react.png'
 categories:
   - javascript

@@ -8,6 +8,11 @@ const visualizations = [
     id: 1,
     title: 'Bivariate Choropleth Color Generator',
     slug: '/bivariate-choropleth-color-generator'
+  },
+  {
+    id: 2,
+    title: 'Minesweeper',
+    slug: '/minesweeper'
   }
 ]
 
