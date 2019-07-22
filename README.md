@@ -10,6 +10,7 @@ Articles, Projects & Visualizations
 - [Projects](#projects)
 - [Visualizations](#visualizations)
 - [Tech Stack](#tech-stack)
+- [Author](#author)
 
 ## Articles
 
@@ -19,12 +20,24 @@ Articles, Projects & Visualizations
 
 ## Projects
 
+| Name  | Description                                                            |                          Link                           |                 Source Code                  |
+| :---- | :--------------------------------------------------------------------- | :-----------------------------------------------------: | :------------------------------------------: |
+| GifIt | Record and edit GIFs from your desktop, webcam or built in white board | [Link](https://benjaminadk.netlify.com/projects/gifit/) | [Repo](https://github.com/benjaminadk/gifit) |
+
 ## Visualizations
 
-| Date       | Title             | Link |
-| :--------- | :---------------- | :--: |
-| 2019-07-13 | High School Clock |      |
+| Date       | Title                                |                                            Link                                             |
+| :--------- | :----------------------------------- | :-----------------------------------------------------------------------------------------: |
+| 2019-07-13 | High School Clock                    |          [Link](https://benjaminadk.netlify.com/visualizations/high-school-clock)           |
+| 2019-07-17 | Bivariate Choropleth Color Generator | [Link](https://benjaminadk.netlify.com/visualizations/bivariate-choropleth-color-generator) |
+| 2019-07-18 | Minesweeper                          |             [Link](https://benjaminadk.netlify.com/visualizations/minesweeper)              |
 
 ## Tech Stack
 
 Created with [Gatsby](https://www.gatsbyjs.org/)
+
+## Author
+
+|                              [**Benjamin Brooke**](https://github.com/benjaminadk)                              |
+| :-------------------------------------------------------------------------------------------------------------: |
+| [<img src="https://avatars2.githubusercontent.com/u/28043421?s=80" width="80">](https://github.com/benjaminadk) |
