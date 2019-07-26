@@ -69,6 +69,7 @@ export const Markdown = styled.div`
     border-collapse: collapse;
     border-spacing: 0;
     font-size: 1.2rem;
+    margin: auto;
   }
   table th {
     border: 1px solid ${p => p.theme.grey[3]};

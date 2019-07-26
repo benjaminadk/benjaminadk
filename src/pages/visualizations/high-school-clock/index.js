@@ -27,14 +27,14 @@ export default ({ data }) => {
 
   const [size, setSize] = useState(400)
 
-  const animation = useRef(null)
+  const clock = useRef(null)
   const sizeRef = useRef(null)
 
   useEffect(() => {
     const runtime = new Runtime()
     runtime.module(notebook, name => {
       if (name === 'clock') {
-        return new Inspector(animation.current)
+        return new Inspector(clock.current)
       }
       if (name === 'mutable size') {
         return {
@@ -77,7 +77,7 @@ export default ({ data }) => {
           />
         </Controls>
         <Clock>
-          <div ref={animation} />
+          <div ref={clock} />
         </Clock>
         <Markdown dangerouslySetInnerHTML={{ __html: html }} />
       </Layout>

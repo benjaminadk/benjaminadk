@@ -31,6 +31,7 @@ Articles, Projects & Visualizations
 | 2019-07-13 | High School Clock                    |          [Link](https://benjaminadk.netlify.com/visualizations/high-school-clock)           |
 | 2019-07-17 | Bivariate Choropleth Color Generator | [Link](https://benjaminadk.netlify.com/visualizations/bivariate-choropleth-color-generator) |
 | 2019-07-18 | Minesweeper                          |             [Link](https://benjaminadk.netlify.com/visualizations/minesweeper)              |
+| 2019-07-23 | Simple Binary Search Tree            |      [Link](https://benjaminadk.netlify.com/visualizations/simple-binary-search-tree)       |
 
 ## Tech Stack
 

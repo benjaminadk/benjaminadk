@@ -13,6 +13,11 @@ const visualizations = [
     id: 2,
     title: 'Minesweeper',
     slug: '/minesweeper'
+  },
+  {
+    id: 3,
+    title: 'Simple Binary Search Tree',
+    slug: '/simple-binary-search-tree'
   }
 ]
 

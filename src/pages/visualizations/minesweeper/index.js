@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import { Runtime, Inspector } from '@observablehq/runtime'
 import notebook from '@benjaminadk/minesweeper'
@@ -25,8 +25,8 @@ export default ({ data }) => {
     html
   } = data.allMarkdownRemark.edges[0].node
 
-  const lvl = useRef(null)
-  const animation = useRef(null)
+  const level = useRef(null)
+  const minesweeper = useRef(null)
   const pattern = useRef(null)
   const style = useRef(null)
 
@@ -34,10 +34,10 @@ export default ({ data }) => {
     const runtime = new Runtime()
     runtime.module(notebook, name => {
       if (name === 'viewof level') {
-        return new Inspector(lvl.current)
+        return new Inspector(level.current)
       }
       if (name === 'minesweeper') {
-        return new Inspector(animation.current)
+        return new Inspector(minesweeper.current)
       }
       if (name === 'style') {
         return new Inspector(style.current)
@@ -56,9 +56,9 @@ export default ({ data }) => {
           <div className='title'>{title}</div>
           <div className='sub-title'>{formatDate(date)}</div>
         </PostTitle>
-        <Level ref={lvl} />
+        <Level ref={level} />
         <Game>
-          <div ref={animation} />
+          <div ref={minesweeper} />
         </Game>
         <Markdown dangerouslySetInnerHTML={{ __html: html }} />
         <div ref={pattern} />
