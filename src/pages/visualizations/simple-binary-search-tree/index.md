@@ -1,6 +1,7 @@
 ---
 title: Simple Binary Search Tree
 date: '2019-07-23'
+featured: featured.png
 ---
 
 Check out the [source code](https://observablehq.com/@benjaminadk/simple-binary-search-tree) at _Observable_.

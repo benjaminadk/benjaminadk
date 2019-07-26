@@ -21,6 +21,7 @@ function SEO({ title, subtitle, description, meta, image: metaImage, pathname })
         }
       `}
       render={data => {
+        const metaTitle = `${title} | ${subtitle}`
         const metaDescription = description || data.site.siteMetadata.description
         const image =
           metaImage && metaImage.src ? `${data.site.siteMetadata.siteUrl}${metaImage.src}` : null
@@ -51,7 +52,7 @@ function SEO({ title, subtitle, description, meta, image: metaImage, pathname })
               },
               {
                 property: `og:title`,
-                content: title
+                content: metaTitle
               },
               {
                 property: `og:description`,
@@ -63,7 +64,7 @@ function SEO({ title, subtitle, description, meta, image: metaImage, pathname })
               },
               {
                 name: `twitter:title`,
-                content: title
+                content: metaTitle
               },
               {
                 name: `twitter:description`,
@@ -79,7 +80,7 @@ function SEO({ title, subtitle, description, meta, image: metaImage, pathname })
                       },
                       {
                         property: `og:image:alt`,
-                        content: title
+                        content: metaTitle
                       },
                       {
                         property: `og:image:width`,

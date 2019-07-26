@@ -2,9 +2,9 @@ import React, { useRef, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import { Runtime, Inspector } from '@observablehq/runtime'
 import notebook from '@benjaminadk/simple-binary-search-tree'
-import Helmet from 'react-helmet'
 import Layout from '../../../components/Layout'
 import { PostTitle, Markdown } from '../../../templates/Post/styles'
+import SEO from '../../../components/seo'
 import formatDate from '../../../utils/formatDate'
 import styled from 'styled-components'
 
@@ -34,9 +34,10 @@ export const Tree = styled.div`
   font-family: Arial, Helvetica, sans-serif;
 `
 
-export default ({ data }) => {
+export default ({ data, location }) => {
   const {
-    frontmatter: { title, date },
+    frontmatter: { title, date, image },
+    excerpt,
     html
   } = data.allMarkdownRemark.edges[0].node
 
@@ -88,30 +89,33 @@ export default ({ data }) => {
   }, [])
 
   return (
-    <>
-      <Helmet />
-      <Layout>
-        <PostTitle>
-          <div className='title'>{title}</div>
-          <div className='sub-title'>{formatDate(date)}</div>
-        </PostTitle>
-        <Control ref={reset1} />
-        <Control ref={searchFor1} />
-        <Output ref={linear1} />
-        <Output ref={binary1} />
-        <Tree>
-          <div ref={tree1} />
-        </Tree>
-        <Markdown dangerouslySetInnerHTML={{ __html: html }} />
-        <Control ref={reset2} />
-        <Control ref={searchFor2} />
-        <Output ref={linear2} />
-        <Output ref={binary2} />
-        <Tree>
-          <div ref={tree2} />
-        </Tree>
-      </Layout>
-    </>
+    <Layout>
+      <SEO
+        subtitle={title}
+        description={excerpt}
+        image={image.childImageSharp.resize}
+        pathname={location.pathname}
+      />
+      <PostTitle>
+        <div className='title'>{title}</div>
+        <div className='sub-title'>{formatDate(date)}</div>
+      </PostTitle>
+      <Control ref={reset1} />
+      <Control ref={searchFor1} />
+      <Output ref={linear1} />
+      <Output ref={binary1} />
+      <Tree>
+        <div ref={tree1} />
+      </Tree>
+      <Markdown dangerouslySetInnerHTML={{ __html: html }} />
+      <Control ref={reset2} />
+      <Control ref={searchFor2} />
+      <Output ref={linear2} />
+      <Output ref={binary2} />
+      <Tree>
+        <div ref={tree2} />
+      </Tree>
+    </Layout>
   )
 }
 
@@ -125,8 +129,18 @@ export const query = graphql`
           frontmatter {
             title
             date
+            image: featured {
+              childImageSharp {
+                resize(width: 1200) {
+                  src
+                  height
+                  width
+                }
+              }
+            }
           }
           html
+          excerpt
         }
       }
     }
