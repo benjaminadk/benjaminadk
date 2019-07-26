@@ -20,7 +20,8 @@
     "develop": "gatsby develop",
     "build": "npm run clean && gatsby build",
     "serve": "gatsby serve",
-    "clean": "rm -rf public && rm -rf .cache"
+    "clean": "rm -rf public && rm -rf .cache",
+    "deploy": "scp -r ./public root@206.189.172.40:/var/www/benjaminbrooke.me"
   },
   "dependencies": {
     "@benjaminadk/embed-version-color-generator": "https://api.observablehq.com/@benjaminadk/embed-version-color-generator.tgz?v=3",

@@ -1,10 +1,12 @@
 import React from 'react'
 import Img from 'gatsby-image'
+import SEO from '../seo'
 import { Container, StyledLink } from './styles'
 
 export default function PostList({ posts }) {
   return (
     <Container>
+      <SEO subtitle='Home' pathname='/' />
       <div className='title'>Posts</div>
       <div className='posts'>
         {posts.map((post, i) => {
