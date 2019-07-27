@@ -20,9 +20,10 @@ Articles, Projects & Visualizations
 
 ## Projects
 
-| Name  | Description                                                            |                          Link                           |                 Source Code                  |
-| :---- | :--------------------------------------------------------------------- | :-----------------------------------------------------: | :------------------------------------------: |
-| GifIt | Record and edit GIFs from your desktop, webcam or built in white board | [Link](https://benjaminadk.netlify.com/projects/gifit/) | [Repo](https://github.com/benjaminadk/gifit) |
+| Name           | Description                                                            |                          Link                           |                      Source Code                      |
+| :------------- | :--------------------------------------------------------------------- | :-----------------------------------------------------: | :---------------------------------------------------: |
+| GifIt          | Record and edit GIFs from your desktop, webcam or built in white board | [Link](https://benjaminadk.netlify.com/projects/gifit/) |    [Source](https://github.com/benjaminadk/gifit)     |
+| Exam Simulator | JSON based, open source and free exam simulator                        |        [Link](https://exam-maker.herokuapp.com/)        | [Source](https://github.com/exam-simulator/simulator) |
 
 ## Visualizations
 
