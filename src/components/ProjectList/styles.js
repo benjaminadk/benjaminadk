@@ -8,10 +8,6 @@ export const Container = styled.div`
     font-size: 40px;
     margin-bottom: 10px;
   }
-  .projects {
-    display: flex;
-    flex-direction: column;
-  }
 `
 
 export const StyledLink = styled(Link)`

@@ -6,14 +6,6 @@ export default function ProjectList({ projects }) {
   return (
     <Container>
       <div className='title'>Projects</div>
-      <div className='projects'>
-        <div style={{ marginBottom: '10px' }}>
-          <span role='img' aria-label='construction'>
-            🚧
-          </span>{' '}
-          Under Construction
-        </div>
-      </div>
       {projects.map((project, i) => {
         const {
           frontmatter: { title, description, thumbnail },
