@@ -2,7 +2,7 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
-const getSchemaOrgJSONLD = ({ isBlogPost, url, title, image, description, date }) => {
+const getSchemaOrgJSONLD = ({ isBlogPost, url, title, image, description, datePublished }) => {
   const schemaOrgJSONLD = [
     {
       '@context': 'http://schema.org',
@@ -50,14 +50,14 @@ const getSchemaOrgJSONLD = ({ isBlogPost, url, title, image, description, date }
           publisher: {
             '@type': 'Organization',
             url: 'https://benjaminadk.netlify.com',
-            // logo: '',
+            logo: 'https://benjaminadk.netlify.com/icons/icon-512x512.png',
             name: 'Benjamin Brooke'
           },
           mainEntityOfPage: {
             '@type': 'WebSite',
             '@id': 'https://benjaminadk.netlify.com'
           },
-          date
+          datePublished
         }
       ]
     : schemaOrgJSONLD
