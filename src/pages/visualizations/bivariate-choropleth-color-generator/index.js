@@ -2,9 +2,9 @@ import React, { useRef, useEffect, useState } from 'react'
 import { graphql } from 'gatsby'
 import { Runtime, Inspector } from '@observablehq/runtime'
 import notebook from '@benjaminadk/embed-version-color-generator'
-import Helmet from 'react-helmet'
 import Layout from '../../../components/Layout'
 import { PostTitle, Markdown } from '../../../templates/Post/styles'
+import SEO from '../../../components/seo'
 import formatDate from '../../../utils/formatDate'
 import styled from 'styled-components'
 
@@ -61,9 +61,9 @@ export const Strings = styled.div`
   }
 `
 
-export default ({ data }) => {
+export default ({ data, location }) => {
   const {
-    frontmatter: { title, date },
+    frontmatter: { title, description, date, image },
     html
   } = data.allMarkdownRemark.edges[0].node
 
@@ -163,63 +163,66 @@ export default ({ data }) => {
   }, [colorMode])
 
   return (
-    <>
-      <Helmet />
-      <Layout>
-        <PostTitle>
-          <div className='title'>{title}</div>
-          <div className='sub-title'>{formatDate(date)}</div>
-        </PostTitle>
-        <Controls>
-          <Input>
-            <span className='label'>Rows</span>
-            <input
-              type='range'
-              value={rows}
-              min={2}
-              max={6}
-              step={1}
-              onChange={e => setRows(e.target.value)}
-            />
-            <span className='value'>{rows}</span>
-          </Input>
-          <Input>
-            <span className='label'>Color 1</span>
-            <input type='color' value={color1} onChange={e => setColor1(e.target.value)} />
-            <span className='value'>{color1}</span>
-          </Input>
-          <Input>
-            <span className='label'>Color 2</span>
-            <input type='color' value={color2} onChange={e => setColor2(e.target.value)} />
-            <span className='value'>{color2}</span>
-          </Input>
-          <Input>
-            <span className='label'>Lightest</span>
-            <input type='color' value={lightest} onChange={e => setLightest(e.target.value)} />
-            <span className='value'>{lightest}</span>
-          </Input>
-          <Input>
-            <span className='label'>Color Mode</span>
-            <select value={colorMode} onChange={e => setColorMode(e.target.value)}>
-              <option value='rgb'>RGB</option>
-              <option value='lab'>Lab</option>
-              <option value='lrgb'>Linear RGB</option>
-              <option value='lch'>Lch</option>
-            </select>
-          </Input>
-        </Controls>
-        <Palettes>
-          <div ref={palettes} />
-        </Palettes>
-        <Strings>
-          <div ref={output1} />
-        </Strings>
-        <Strings>
-          <div ref={output2} />
-        </Strings>
-        <Markdown dangerouslySetInnerHTML={{ __html: html }} />
-      </Layout>
-    </>
+    <Layout>
+      <SEO
+        subtitle={title}
+        description={description}
+        image={image.childImageSharp.resize}
+        pathname={location.pathname}
+      />
+      <PostTitle>
+        <div className='title'>{title}</div>
+        <div className='sub-title'>{formatDate(date)}</div>
+      </PostTitle>
+      <Controls>
+        <Input>
+          <span className='label'>Rows</span>
+          <input
+            type='range'
+            value={rows}
+            min={2}
+            max={6}
+            step={1}
+            onChange={e => setRows(e.target.value)}
+          />
+          <span className='value'>{rows}</span>
+        </Input>
+        <Input>
+          <span className='label'>Color 1</span>
+          <input type='color' value={color1} onChange={e => setColor1(e.target.value)} />
+          <span className='value'>{color1}</span>
+        </Input>
+        <Input>
+          <span className='label'>Color 2</span>
+          <input type='color' value={color2} onChange={e => setColor2(e.target.value)} />
+          <span className='value'>{color2}</span>
+        </Input>
+        <Input>
+          <span className='label'>Lightest</span>
+          <input type='color' value={lightest} onChange={e => setLightest(e.target.value)} />
+          <span className='value'>{lightest}</span>
+        </Input>
+        <Input>
+          <span className='label'>Color Mode</span>
+          <select value={colorMode} onChange={e => setColorMode(e.target.value)}>
+            <option value='rgb'>RGB</option>
+            <option value='lab'>Lab</option>
+            <option value='lrgb'>Linear RGB</option>
+            <option value='lch'>Lch</option>
+          </select>
+        </Input>
+      </Controls>
+      <Palettes>
+        <div ref={palettes} />
+      </Palettes>
+      <Strings>
+        <div ref={output1} />
+      </Strings>
+      <Strings>
+        <div ref={output2} />
+      </Strings>
+      <Markdown dangerouslySetInnerHTML={{ __html: html }} />
+    </Layout>
   )
 }
 
@@ -234,7 +237,17 @@ export const query = graphql`
         node {
           frontmatter {
             title
+            description
             date
+            image: featured {
+              childImageSharp {
+                resize(width: 1200) {
+                  src
+                  height
+                  width
+                }
+              }
+            }
           }
           html
         }

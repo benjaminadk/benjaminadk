@@ -36,8 +36,7 @@ export const Tree = styled.div`
 
 export default ({ data, location }) => {
   const {
-    frontmatter: { title, date, image },
-    excerpt,
+    frontmatter: { title, description, date, image },
     html
   } = data.allMarkdownRemark.edges[0].node
 
@@ -92,7 +91,7 @@ export default ({ data, location }) => {
     <Layout>
       <SEO
         subtitle={title}
-        description={excerpt}
+        description={description}
         image={image.childImageSharp.resize}
         pathname={location.pathname}
       />
@@ -128,6 +127,7 @@ export const query = graphql`
         node {
           frontmatter {
             title
+            description
             date
             image: featured {
               childImageSharp {
@@ -140,7 +140,6 @@ export const query = graphql`
             }
           }
           html
-          excerpt
         }
       }
     }

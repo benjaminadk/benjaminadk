@@ -5,6 +5,7 @@ import notebook from '@benjaminadk/high-school-clock'
 import Helmet from 'react-helmet'
 import Layout from '../../../components/Layout'
 import { PostTitle, Markdown } from '../../../templates/Post/styles'
+import SEO from '../../../components/seo'
 import formatDate from '../../../utils/formatDate'
 import styled from 'styled-components'
 
@@ -19,9 +20,9 @@ export const Clock = styled.div`
   justify-items: center;
 `
 
-export default ({ data }) => {
+export default ({ data, location }) => {
   const {
-    frontmatter: { title, date },
+    frontmatter: { title, description, date, image },
     html
   } = data.allMarkdownRemark.edges[0].node
 
@@ -60,6 +61,12 @@ export default ({ data }) => {
           rel='stylesheet'
         />
       </Helmet>
+      <SEO
+        subtitle={title}
+        description={description}
+        image={image.childImageSharp.resize}
+        pathname={location.pathname}
+      />
       <Layout>
         <PostTitle>
           <div className='title'>{title}</div>
@@ -94,7 +101,17 @@ export const query = graphql`
         node {
           frontmatter {
             title
+            description
             date
+            image: featured {
+              childImageSharp {
+                resize(width: 1200) {
+                  src
+                  height
+                  width
+                }
+              }
+            }
           }
           html
         }

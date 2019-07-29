@@ -2,9 +2,9 @@ import React, { useRef, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import { Runtime, Inspector } from '@observablehq/runtime'
 import notebook from '@benjaminadk/minesweeper'
-import Helmet from 'react-helmet'
 import Layout from '../../../components/Layout'
 import { PostTitle, Markdown } from '../../../templates/Post/styles'
+import SEO from '../../../components/seo'
 import formatDate from '../../../utils/formatDate'
 import styled from 'styled-components'
 
@@ -19,9 +19,9 @@ export const Game = styled.div`
   justify-items: center;
 `
 
-export default ({ data }) => {
+export default ({ data, location }) => {
   const {
-    frontmatter: { title, date },
+    frontmatter: { title, description, date, image },
     html
   } = data.allMarkdownRemark.edges[0].node
 
@@ -49,22 +49,25 @@ export default ({ data }) => {
   }, [])
 
   return (
-    <>
-      <Helmet />
-      <Layout>
-        <PostTitle>
-          <div className='title'>{title}</div>
-          <div className='sub-title'>{formatDate(date)}</div>
-        </PostTitle>
-        <Level ref={level} />
-        <Game>
-          <div ref={minesweeper} />
-        </Game>
-        <Markdown dangerouslySetInnerHTML={{ __html: html }} />
-        <div ref={pattern} />
-        <div ref={style} />
-      </Layout>
-    </>
+    <Layout>
+      <SEO
+        subtitle={title}
+        description={description}
+        image={image.childImageSharp.resize}
+        pathname={location.pathname}
+      />
+      <PostTitle>
+        <div className='title'>{title}</div>
+        <div className='sub-title'>{formatDate(date)}</div>
+      </PostTitle>
+      <Level ref={level} />
+      <Game>
+        <div ref={minesweeper} />
+      </Game>
+      <Markdown dangerouslySetInnerHTML={{ __html: html }} />
+      <div ref={pattern} />
+      <div ref={style} />
+    </Layout>
   )
 }
 
@@ -75,7 +78,17 @@ export const query = graphql`
         node {
           frontmatter {
             title
+            description
             date
+            image: featured {
+              childImageSharp {
+                resize(width: 1200) {
+                  src
+                  height
+                  width
+                }
+              }
+            }
           }
           html
         }

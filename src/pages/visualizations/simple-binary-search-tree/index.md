@@ -1,5 +1,6 @@
 ---
 title: Simple Binary Search Tree
+description: A Visualization of a Binary Search Tree using JavaScript and D3
 date: '2019-07-23'
 featured: featured.png
 ---
