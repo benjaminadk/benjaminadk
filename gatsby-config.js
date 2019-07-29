@@ -101,8 +101,7 @@ module.exports = {
         // Percentage of users tracked
         sampleRate: 100,
         // Percentage of user to track site speed with
-        siteSpeedSampleRate: 10,
-        cookieDomain: 'example.com'
+        siteSpeedSampleRate: 10
       }
     }
   ]

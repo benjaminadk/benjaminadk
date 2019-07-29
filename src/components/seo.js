@@ -2,7 +2,77 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
-function SEO({ title, subtitle, description, meta, image: metaImage, pathname }) {
+const getSchemaOrgJSONLD = ({ isBlogPost, url, title, image, description, date }) => {
+  const schemaOrgJSONLD = [
+    {
+      '@context': 'http://schema.org',
+      '@type': 'WebSite',
+      url,
+      name: title,
+      alternateName: 'Benjamin Brooke'
+    }
+  ]
+
+  return isBlogPost
+    ? [
+        ...schemaOrgJSONLD,
+        {
+          '@context': 'https://benjaminadk.netlify.com',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              item: {
+                '@id': url,
+                name: title,
+                image
+              }
+            }
+          ]
+        },
+        {
+          '@context': 'https://benjaminadk.netlify.com',
+          '@type': 'BlogPosting',
+          url,
+          name: title,
+          alternateName: 'Benjamin Brooke',
+          headline: title,
+          image: {
+            '@type': 'ImageObject',
+            url: image
+          },
+          description,
+          author: {
+            '@type': 'Person',
+            name: 'Benjamin Brooke'
+          },
+          publisher: {
+            '@type': 'Organization',
+            url: 'https://benjaminadk.netlify.com',
+            // logo: '',
+            name: 'Benjamin Brooke'
+          },
+          mainEntityOfPage: {
+            '@type': 'WebSite',
+            '@id': 'https://benjaminadk.netlify.com'
+          },
+          date
+        }
+      ]
+    : schemaOrgJSONLD
+}
+
+function SEO({
+  title,
+  subtitle,
+  description,
+  meta,
+  image: metaImage,
+  pathname,
+  isBlogPost,
+  datePublished
+}) {
   return (
     <StaticQuery
       query={graphql`
@@ -26,6 +96,16 @@ function SEO({ title, subtitle, description, meta, image: metaImage, pathname })
         const image =
           metaImage && metaImage.src ? `${data.site.siteMetadata.siteUrl}${metaImage.src}` : null
         const metaUrl = `${data.site.siteMetadata.siteUrl}${pathname}`
+
+        const schemaOrgJSONLD = getSchemaOrgJSONLD({
+          isBlogPost,
+          url: metaUrl,
+          title: metaTitle,
+          image,
+          description: metaDescription,
+          datePublished
+        })
+
         return (
           <Helmet
             htmlAttributes={{
@@ -103,7 +183,9 @@ function SEO({ title, subtitle, description, meta, image: metaImage, pathname })
                     ]
               )
               .concat(meta)}
-          />
+          >
+            <script type='application/ld+json'>{JSON.stringify(schemaOrgJSONLD)}</script>
+          </Helmet>
         )
       }}
     />
