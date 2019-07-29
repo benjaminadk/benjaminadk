@@ -17,7 +17,7 @@ const getSchemaOrgJSONLD = ({ isBlogPost, url, title, image, description, date }
     ? [
         ...schemaOrgJSONLD,
         {
-          '@context': 'https://benjaminadk.netlify.com',
+          '@context': 'http://schema.org',
           '@type': 'BreadcrumbList',
           itemListElement: [
             {
@@ -32,7 +32,7 @@ const getSchemaOrgJSONLD = ({ isBlogPost, url, title, image, description, date }
           ]
         },
         {
-          '@context': 'https://benjaminadk.netlify.com',
+          '@context': 'http://schema.org',
           '@type': 'BlogPosting',
           url,
           name: title,
