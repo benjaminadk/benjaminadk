@@ -94,6 +94,8 @@ export default ({ data, location }) => {
         description={description}
         image={image.childImageSharp.resize}
         pathname={location.pathname}
+        isBlogPost={true}
+        datePublished={date}
       />
       <PostTitle>
         <div className='title'>{title}</div>

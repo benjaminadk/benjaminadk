@@ -120,7 +120,7 @@ export const Markdown = styled.div`
     color: ${p => p.theme.code.text};
     background: none;
     font-family: ${p => p.theme.code.font};
-    font-size: 14px !important;
+    font-size: 13px !important;
     font-feature-settings: normal;
     text-align: left;
     white-space: pre;
@@ -213,7 +213,13 @@ export const Markdown = styled.div`
     border-radius: 2px;
     background: ${p => p.theme.code.inlineBg};
     color: ${p => p.theme.code.inlineColor};
-    padding: 2px 4px;
+    padding: 0.5px 4px;
     white-space: normal;
+  }
+  code[class*='language-simple'] {
+    border-radius: 2px;
+    color: #fff;
+    padding: 0.5px 4px;
+    white-space: pre;
   }
 `

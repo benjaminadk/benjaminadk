@@ -20,6 +20,8 @@ export default function Post({ data, location }) {
         description={excerpt}
         image={image.childImageSharp.resize}
         pathname={location.pathname}
+        isBlogPost={true}
+        datePublished={date}
       />
       <PostTitle>
         <div className='title'>{title}</div>
