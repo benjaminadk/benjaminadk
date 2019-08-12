@@ -2,7 +2,7 @@
 title: Bivariate Choropleth Color Generator
 description: Automatically create the color scheme for your next bivariate choropleth map visualization.
 date: '2019-07-17'
-featured: featured.png
+featured: './featured.png'
 ---
 
 Check out the [source code](https://observablehq.com/@benjaminadk/bivariate-choropleth-color-generator) at _Observable_.

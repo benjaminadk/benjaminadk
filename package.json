@@ -16,8 +16,8 @@
     "url": "https://github.com/benjaminadk/benjaminadk.git"
   },
   "scripts": {
-    "start": "npm run develop",
-    "develop": "gatsby develop",
+    "start": "npm run dev",
+    "dev": "gatsby develop",
     "build": "npm run clean && gatsby build",
     "serve": "gatsby serve",
     "clean": "rm -rf public && rm -rf .cache",

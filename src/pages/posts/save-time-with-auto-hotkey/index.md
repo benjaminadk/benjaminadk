@@ -2,7 +2,7 @@
 title: Save Time With Auto Hotkey
 date: '2019-08-02'
 thumbnail: '../../../images/javascript.png'
-featured: featured.jpg
+featured: './featured.jpg'
 categories:
   - devtools
 tags:

@@ -2,7 +2,7 @@
 title: Simple Binary Search Tree
 description: A Visualization of a Binary Search Tree using JavaScript and D3
 date: '2019-07-23'
-featured: featured.png
+featured: './featured.png'
 ---
 
 Check out the [source code](https://observablehq.com/@benjaminadk/simple-binary-search-tree) at _Observable_.

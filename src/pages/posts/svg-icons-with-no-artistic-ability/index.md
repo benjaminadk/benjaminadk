@@ -2,7 +2,7 @@
 title: SVG Icons With Minimal Artistic Ability
 date: '2019-07-10'
 thumbnail: '../../../images/react.png'
-featured: google-icon.png
+featured: './google-icon.png'
 categories:
   - javascript
 tags:

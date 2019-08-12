@@ -2,7 +2,7 @@
 title: High School Clock
 description: Keeps accurate time too.
 date: '2019-07-13'
-featured: featured.png
+featured: './featured.png'
 ---
 
 This visualization was originally made on [Observable](https://observablehq.com) and is embedded into the [React](https://reactjs.org) application that runs my website. The coolest part is the ability to control state, in this case the size of the clock. Check out [🤔 How to: Embed a Notebook in a React App](https://observablehq.com/@observablehq/how-to-embed-a-notebook-in-a-react-app) to learn more about the process and shout-out to _Observable_ on creating an awesome tool.
