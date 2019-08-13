@@ -13,7 +13,7 @@ The genesis of _Gitmoji Commit_ came about when I was working in a small team an
 
 ## Commit Message
 
-Once the extension is installed it is simple to user and integrate into a normal workflow. When the time comes to make a commit open _Gitmoji Commit_ through a keyboard shortcut or through the _Command Palette_. Since the keyboard shortcut needs to be setup manually lets walk through the _Command Palette_ flow.
+Once the extension is installed it is easy to integrate into a normal workflow. When the time comes to make a commit open _Gitmoji Commit_ through a keyboard shortcut or through the _Command Palette_. Since the keyboard shortcut needs to be setup manually lets walk through the _Command Palette_ flow.
 
 <div class='center'>
 <img src='commit.gif' style='max-width: 800px;'>
