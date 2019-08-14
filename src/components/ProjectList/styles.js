@@ -6,6 +6,7 @@ export const Container = styled.div`
   margin: 0 auto;
   .title {
     font-size: 40px;
+    font-weight: 600;
     margin-bottom: 10px;
   }
 `
@@ -14,9 +15,8 @@ export const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: ${p => p.theme.grey[8]};
-  font-size: 1.2rem;
-  padding-bottom: 0.5rem;
+  color: ${p => p.theme.grey[10]};
+  padding-bottom: 10px;
   &:hover {
     color: ${p => p.theme.textColor};
   }
@@ -28,13 +28,14 @@ export const StyledLink = styled(Link)`
     align-items: center;
   }
   .title {
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: 400;
     text-decoration: underline;
     margin-right: 10px;
     margin-bottom: 0;
   }
   .description {
-    font-size: 14px;
+    font-size: 12px;
   }
   .thumbnail {
     width: 30px !important;

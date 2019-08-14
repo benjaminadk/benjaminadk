@@ -7,9 +7,9 @@ featured: './featured.png'
 
 Check out the [source code](https://observablehq.com/@benjaminadk/simple-binary-search-tree) at _Observable_.
 
-This visualization implements a _Binary Search Tree_ using _JavaScript_. As values are added to the _Binary Search Tree_ new _nodes_ are created. Each node has a `value`, `left` and `right` property. The `left` and `right` properties are other nodes in the tree. The only rule is that the `left` node's `value` must be less than or equal to the parent node's value and the `right` node's value must be greater than or equal to the parent's value. This rule makes finding a value for efficient than the linear alternative. Imagine a linear search as checking one value at a time sequencially.
+This visualization implements a _Binary Search Tree_ using _JavaScript_. As values are added to the _Binary Search Tree_ new _nodes_ are created. Each node has a `value`, `left` and `right` property. The `left` and `right` properties are other nodes in the tree. The only rule is that the `left` node's `value` must be less than or equal to the parent node's value and the `right` node's value must be greater than or equal to the parent's value. This rule makes finding a value more efficient than the linear alternative. Imagine a linear search or an array as checking one value at a time sequencially.
 
-Using _Big O_ notation the linear search is `O(n)` and the _Binary Search Tree_ is `O(log n)`.
+Using _Big O_ notation the time complexity of a linear search is `O(n)`, while the _Binary Search Tree's_ is `O(log n)`. Essentially, the worst case scenario for a linear search is that every item in the array must be visited. This means the search time increases at the same rate that the size of the array increases. On the other hand, as the size of a _Binary Search Tree_ increases the search time levels off.
 
 Here is my implementation of a _Binary Search Tree_ that includes logic to return the path of the search.
 

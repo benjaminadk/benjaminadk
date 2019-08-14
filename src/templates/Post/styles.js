@@ -5,6 +5,7 @@ export const PostTitle = styled.div`
   margin: 10px auto 0;
   .title {
     font-size: 40px;
+    font-weight: 600;
     color: ${p => p.theme.textColor};
   }
   .sub-title {
@@ -29,6 +30,7 @@ export const Markdown = styled.div`
   p {
     font-family: ${p => p.theme.textFont};
     font-size: 18px;
+    text-align: justify;
   }
   a {
     color: ${p => p.theme.grey[8]};
@@ -36,16 +38,23 @@ export const Markdown = styled.div`
       color: ${p => p.theme.textColor};
     }
   }
+  a.anchor {
+    margin-left: -35px;
+  }
   a.anchor svg {
     margin-top: -8px;
   }
   h1 {
     font-size: 40px;
-    font-weight: 400;
+    font-weight: 600;
   }
   h2 {
     font-size: 30px;
-    font-weight: 400;
+    font-weight: 600;
+  }
+  h3 {
+    font-size: 25px;
+    font-weight: 600;
   }
   ul {
     list-style-type: circle;
@@ -87,7 +96,8 @@ export const Markdown = styled.div`
     background-color: ${p => p.theme.grey[1]};
   }
   hr {
-    border: 1px solid ${p => p.theme.grey[2]};
+    border: 0;
+    border-top: 1px solid ${p => p.theme.grey[2]};
     margin-top: 30px;
     margin-bottom: 30px;
   }

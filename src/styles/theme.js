@@ -42,7 +42,7 @@ export default {
   navHeight: '50px',
   footerHeight: '100px',
   textFont: `Georgia, 'Times New Roman', Times, serif`,
-  textColor: grey[12],
+  textColor: grey[13],
   backgroundColor: grey[0],
   filenameColor: '#111111',
   highlightColor: '#252b31',

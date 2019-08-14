@@ -5,6 +5,7 @@ export const ProjectTitle = styled.div`
   margin: 10px auto 0;
   .title {
     font-size: 40px;
+    font-weight: 600;
     color: ${p => p.theme.textColor};
   }
   .sub-title {

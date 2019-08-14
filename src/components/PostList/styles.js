@@ -6,6 +6,7 @@ export const Container = styled.div`
   margin: 0 auto;
   .title {
     font-size: 40px;
+    font-weight: 600;
     margin-bottom: 10px;
   }
   .posts {
@@ -17,9 +18,9 @@ export const Container = styled.div`
 export const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
-  color: ${p => p.theme.grey[8]};
-  font-size: 1.2rem;
-  padding-bottom: 0.5rem;
+  color: ${p => p.theme.grey[10]};
+  font-size: 18px;
+  padding-bottom: 10px;
   &:hover {
     color: ${p => p.theme.textColor};
   }

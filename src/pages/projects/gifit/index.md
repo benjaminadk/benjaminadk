@@ -13,7 +13,15 @@ source: 'https://github.com/benjaminadk/gifit'
 
 ---
 
-## Desktop Recorder
+## Recording
+
+_GifIt_ ships with three separate recorders, the _Desktop_, _Webcam_ and _White Board_ recorders are accessed through the _Start Up_ window.
+
+<img src='gifit-1.png'>
+
+---
+
+### Desktop Recorder
 
 The _Desktop Recorder_ captures a series of images that can later be editted an encoded into a _GIF_. Possible use cases of this feature are to display the use an interactive component, record an animation or to demonstrate a step by step tutorial. Recently, I designed my own version of the classic game [Minesweeper](/visualizations/minesweeper). The _Desktop Recorder_ allows me to select the specific region of the screen I want to record so I can show off my skills as both a developer and as a sweeper of mines.
 
@@ -43,7 +51,9 @@ Many of the _Editor_ features involve manipulating one or more image. Multiple i
 <img src="editor-2.gif" style='max-width: 800px;'>
 </div>
 
-### Canvas
+---
+
+### Zoom
 
 The foundation of the _Editor_ is _HTML Canvas_. The main section is actually comprised on 5 _Canvas_ elements layered on top of each other. When the _Editor_ loads a new project the _JSON_ configuration file is read from every project directory is read into memory. Any project can now be opened via the _Recent Projects_ menu. The _Recorder_ saves the name of the directory it just created as state so when the _Editor_ comes across that _JSON_ file it uses it compute various settings. The `width` and `height` of the images are used to determine the dimensions of the thumbnails and the inital zoom level of the _Canvas_ `context`. The absolute paths to all the images are stored as an array in state and accessing each one is accomplished by matching the index of selected thumbnail to the array. The first or bottom _Canvas_ is the where the actual image is drawn.
 
@@ -77,3 +87,37 @@ The scale, zoom level can easily be changed through various parts of the user in
 <div class='center'>
 <img src="editor-3.gif" style='max-width: 800px;'>
 </div>
+
+---
+
+### Playback
+
+Playback is useful to get an idea of how the eventual _GIF_ will look as it plays. The duration of each frame is recorded and saved in the project's _JSON_ file making this approximation of a _GIF_ in the _Editor_ is possible. Duration is a number in milliseconds and is based on the initial framerate set by the user. The playback controls are presented in the bottom right corner of the screen and in the main menu. The available commands include play/pause, previous/next frame and first/last frame. A `Boolean` value representing whether the project is playing is kept in the _Editor_ state. Another `useEffect` hook is triggered any time the `playing` or `imageIndex` state is changed. Remember, the `imageIndex` controls which image is displayed in the _Editor_, so increasing this by one shows the next image. The hook is built around `setTimeout` and if the `playing` variable is true the `imageIndex` state is increased by one using the duration of the current frame as the delay. When the `setTimeout` executes the hook is triggered again and the previous timeout is cleared. Each iteration checks to see if the `imageIndex` is the last one in the array, and if it is the value is reset to 0. This creates the looping effect.
+
+```js
+useEffect(() => {
+  // keep track of setTimeout
+  var pid
+  // user clicked play button
+  if (playing) {
+    pid = setTimeout(() => {
+      setImageIndex(x => (x === images.length - 1 ? 0 : x + 1))
+    }, images[imageIndex].time)
+
+    // user clicked pause button
+  } else {
+    if (pid) {
+      clearTimeout(pid)
+      setSelected(selected.map((el, i) => i === imageIndex))
+    }
+  }
+  return () => clearTimeout(pid)
+}, [playing, imageIndex])
+```
+
+The image below is a _GIF_ of the _Playback_ features in action. When the play button is pressed the _Editor_ cycles through the frames. Notice that duration and index of each frame is displayed below each thumbnail. When the `imageIndex` changes the corresponding thumbnail is scrolled into view and highlighted. As a side note, this game is built into _Google Chrome_ and appears when there is no internet connection. To access the game anytime type `chrome://dino` into the search box.
+
+<div class='center'>
+<img src="editor-4.gif" style='max-width: 800px;'>
+</div>
+---

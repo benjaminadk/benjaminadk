@@ -6,6 +6,7 @@ export const Container = styled.div`
   margin: 0 auto;
   .title {
     font-size: 40px;
+    font-weight: 600;
     margin-bottom: 10px;
   }
   .visualizations {
@@ -17,20 +18,10 @@ export const Container = styled.div`
 export const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
-  color: ${p => p.theme.grey[8]};
-  font-size: 1.2rem;
+  color: ${p => p.theme.grey[10]};
+  font-size: 18px;
   padding-bottom: 0.5rem;
   &:hover {
     color: ${p => p.theme.textColor};
-  }
-  .text {
-    display: flex;
-    align-items: center;
-  }
-  .title {
-    font-size: 20px;
-    text-decoration: underline;
-    margin-right: 10px;
-    margin-bottom: 0;
   }
 `
