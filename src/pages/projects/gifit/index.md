@@ -1,6 +1,7 @@
 ---
 title: GifIt
 description: Record from your desktop, webcam or white board
+date: '2019-08-01'
 thumbnail: '../../../images/gifit.png'
 source: 'https://github.com/benjaminadk/gifit'
 ---

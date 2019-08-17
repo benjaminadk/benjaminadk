@@ -102,11 +102,13 @@ export const Markdown = styled.div`
     margin-bottom: 30px;
   }
   .filename {
-    background: ${p => p.theme.filenameColor};
+    background: ${p => p.theme.grey[1]};
     padding: 10px 15px;
-    font-size: 16px;
-    color: white;
-    font-family: ${p => p.theme.code.font};
+    font-size: 14px;
+    color: ${p => p.theme.textColor};
+    font-family: ${p => p.theme.codeFont};
+    border: 1px solid #dddddd;
+    border-bottom: 0;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     margin-bottom: -10px;
@@ -120,25 +122,36 @@ export const Markdown = styled.div`
     margin: 10px 0px;
     background: ${p => p.theme.highlightColor};
     overflow: auto;
+    padding: 0;
   }
   .gatsby-highlight pre[class*='language-'] {
+    margin: 0;
+    padding: 1em;
+    overflow: initial;
     float: left;
     min-width: 100%;
   }
+  .gatsby-highlight-code-line {
+    background-color: #ffffe5;
+    display: block;
+    margin-right: -1em;
+    margin-left: -1em;
+    padding-right: 1em;
+    padding-left: 0.75em;
+    border-left: 2px solid yellow;
+  }
   code[class*='language-'],
   pre[class*='language-'] {
-    color: ${p => p.theme.code.text};
-    background: none;
-    font-family: ${p => p.theme.code.font};
-    font-size: 13px !important;
-    font-feature-settings: normal;
+    color: #393a34;
+    font-family: ${p => p.theme.codeFont};
+    font-size: 12px !important;
+    direction: ltr;
     text-align: left;
     white-space: pre;
     word-spacing: normal;
     word-break: normal;
-    word-wrap: normal;
-    line-height: 1.5;
-    margin-bottom: 0;
+    font-size: 0.95em;
+    line-height: 1.2em;
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
@@ -147,89 +160,130 @@ export const Markdown = styled.div`
     -ms-hyphens: none;
     hyphens: none;
   }
-  pre[class*='language-'] {
-    overflow: auto;
-    padding: 1.3125rem;
-    margin-top: 0;
-  }
-  pre[class*='language-']::-moz-selection {
-    background: hsl(207, 4%, 16%);
-  }
-  pre[class*='language-']::selection {
-    background: hsl(207, 4%, 16%);
-  }
   pre[class*='language-']::-moz-selection,
-  pre[class*='language-'] ::-moz-selection {
-    text-shadow: none;
-    background: hsla(0, 0%, 100%, 0.15);
+  pre[class*='language-'] ::-moz-selection,
+  code[class*='language-']::-moz-selection,
+  code[class*='language-'] ::-moz-selection {
+    background: #c1def1;
   }
   pre[class*='language-']::selection,
-  pre[class*='language-'] ::selection {
-    text-shadow: none;
-    background: hsla(0, 0%, 100%, 0.15);
+  pre[class*='language-'] ::selection,
+  code[class*='language-']::selection,
+  code[class*='language-'] ::selection {
+    background: #c1def1;
   }
-  .token.attr-name {
-    color: ${p => p.theme.code.attribute};
-    font-style: italic;
-  }
-  .token.comment {
-    color: ${p => p.theme.code.comment};
-  }
-  .token.string,
-  .token.url {
-    color: ${p => p.theme.code.string};
-  }
-  .token.variable {
-    color: ${p => p.theme.code.variable};
-  }
-  .token.number {
-    color: ${p => p.theme.code.number};
-  }
-  .token.builtin,
-  .token.char,
-  .token.constant,
-  .token.function {
-    color: ${p => p.theme.code.function};
-  }
-  .token.parameter {
-    color: ${p => p.theme.code.parameter};
-  }
-  .token.operator,
-  .token.punctuation {
-    color: ${p => p.theme.code.punctuation};
-  }
-  .token.selector,
-  .token.doctype {
-    color: ${p => p.theme.selector};
-    font-style: 'italic';
-  }
-  .token.class-name {
-    color: ${p => p.theme.code.class};
-  }
-  .token.tag,
-  .token.keyword {
-    color: ${p => p.theme.code.keyword};
-  }
-  .token.boolean {
-    color: ${p => p.theme.code.boolean};
-  }
-  .token.property {
-    color: ${p => p.theme.code.property};
-  }
-  .token.namespace {
-    color: ${p => p.theme.namespace};
+  /* Code blocks */
+  pre[class*='language-'] {
+    padding: 1em;
+    margin: 0.5em 0;
+    overflow: auto;
+    border: 1px solid #dddddd;
+    background-color: white;
   }
   code[class*='language-text'] {
     border-radius: 2px;
-    background: ${p => p.theme.code.inlineBg};
-    color: ${p => p.theme.code.inlineColor};
+    color: ${p => p.theme.textColor};
     padding: 0.5px 4px;
     white-space: normal;
   }
-  code[class*='language-simple'] {
-    border-radius: 2px;
-    color: #fff;
-    padding: 0.5px 4px;
-    white-space: pre;
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    color: #008000;
+    font-style: italic;
+  }
+  .token.namespace {
+    opacity: 0.7;
+  }
+  .token.string {
+    color: #a31515;
+  }
+  .token.punctuation,
+  .token.operator {
+    color: #393a34; /* no highlight */
+  }
+  .token.url,
+  .token.symbol,
+  .token.number,
+  .token.boolean,
+  .token.variable,
+  .token.constant,
+  .token.inserted {
+    color: #36acaa;
+  }
+  .token.atrule,
+  .token.keyword,
+  .token.attr-value,
+  .language-autohotkey .token.selector,
+  .language-json .token.boolean,
+  .language-json .token.number,
+  code[class*='language-css'] {
+    color: #3232cd;
+  }
+  .token.function {
+    color: #393a34;
+  }
+  .token.deleted,
+  .language-autohotkey .token.tag {
+    color: #9a050f;
+  }
+  .token.selector,
+  .language-autohotkey .token.keyword {
+    color: #00009f;
+  }
+  .token.important,
+  .token.bold {
+    font-weight: bold;
+  }
+  .token.italic {
+    font-style: italic;
+  }
+  .token.class-name,
+  .language-json .token.property {
+    color: #2b91af;
+  }
+  .token.tag,
+  .token.selector {
+    color: #800000;
+  }
+  .token.attr-name,
+  .token.property,
+  .token.regex,
+  .token.entity {
+    color: #d62929;
+  }
+  .token.directive.tag .tag {
+    background: #ffff00;
+    color: #393a34;
+  }
+  .command-line-prompt {
+    border-right: 1px solid #999;
+    display: block;
+    float: left;
+    font-size: 100%;
+    letter-spacing: -1px;
+    margin-right: 1em;
+    pointer-events: none;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .command-line-prompt > span:before {
+    color: #999;
+    content: ' ';
+    display: block;
+    padding-right: 0.8em;
+  }
+  .command-line-prompt > span[data-user]:before {
+    content: '[' attr(data-user) '@' attr(data-host) '] $';
+  }
+  .command-line-prompt > span[data-user='root']:before {
+    content: '[' attr(data-user) '@' attr(data-host) '] #';
+  }
+  .command-line-prompt > span[data-prompt]:before {
+    content: attr(data-prompt);
   }
 `

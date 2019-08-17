@@ -29,7 +29,7 @@ export const query = graphql`
   }
 `
 
-function Post({ data, location }) {
+const Post = ({ data, location }) => {
   const {
     frontmatter: { title, date, image },
     html,

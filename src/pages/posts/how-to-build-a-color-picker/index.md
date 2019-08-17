@@ -11,9 +11,9 @@ tags:
   - color
 ---
 
-Building a color picker was one of the first projects I tried my hand at once I knew how to string together a couple lines of _JavaScript_. They were total abombinations if my memory serves me correctly. Recently, I needed a simple color picker for my lastest project [Palette Pal](). This article will cover the step by step process. The target audience for the article probably has some experience with _React_, but by no means does it require expert ability. I will do by best to keep a slow pace and explain the thinking behind component composition and how the pieces fit.
+Building a color picker was one of the first projects I tried my hand at once I knew how to string together a couple lines of _JavaScript_. They were total abombinations if my memory serves me correctly. Recently, I needed a simple color picker for my lastest project [Palette Pal](https://github.com/benjaminadk/palette-pal). This article will cover the step by step process. The target audience for the article probably has some experience with _React_, but by no means does it require expert ability. I will do by best to keep a slow pace and explain the thinking behind component composition and how the pieces fit.
 
-<iframe src="https://codesandbox.io/embed/color-picker-v6oo1?fontsize=14&view=preview" title="Color Picker" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+<iframe src="https://codesandbox.io/embed/color-picker-v6oo1?fontsize=14" title="Color Picker" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
 ## Getting Started
 
@@ -56,7 +56,7 @@ ReactDOM.render(<App />, rootElement)
 
 <div class='filename'>GlobalStyle.js</div>
 
-```js
+```jsx
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 
@@ -80,7 +80,7 @@ body {
 
 <div class='filename'>Picker.js</div>
 
-```js
+```jsx
 import React, { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
 
@@ -115,7 +115,7 @@ This boilerplate should result in a black rectangle in the middle of the screen.
 
 <div class='filename'>Modal.js</div>
 
-```js
+```jsx
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
@@ -171,7 +171,7 @@ As a side note, this basic _Modal_ can be used for anything - signups, forms, im
 
 - Add Modal to Picker
 
-```js
+```jsx
 const Picker = () => {
   const [show, setShow] = useState(false)
   const [color, setColor] = useState("#000000")
@@ -225,7 +225,7 @@ The _Hue_ bar itself is actually an _HTML Canvas_ element. When the _Picker_ loa
 
 <div class='filename'>usePaintHue</div>
 
-```js
+```jsx
 import React, { useEffect } from 'react'
 import config from './config'
 
@@ -252,7 +252,7 @@ The _Picker_ will keep track of a few more pieces of state effected by _Hue_. Th
 
 <div class='filename'>Picker.js</div>
 
-```js
+```jsx
 import React, { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
 import Modal from './Modal'
@@ -357,7 +357,7 @@ If some of the calculations seem confusing its because they are. The `barSize` i
 
 <div class='filename'>Hue.js</div>
 
-```js
+```jsx
 import React, { useRef, useEffect } from 'react'
 import styled from 'styled-components'
 import throttle from 'lodash.throttle'
@@ -382,7 +382,7 @@ export const Canvas = styled.canvas.attrs(p => ({
 export const Handle = styled.div.attrs(p => ({
   style: {
     left: p.left + 'px',
-    transition: p.animate ? 'top .75s ease-out' : '0s'
+    transition: p.animate ? 'left .25s ease-out' : '0s'
   }
 }))`
   position: absolute;
@@ -399,7 +399,7 @@ export const Handle = styled.div.attrs(p => ({
   }
 `
 
-const Hue = ({ hueX, offsetLeft, setHueX, setHue }) => {
+const Hue = ({ hueX, offsetLeft, animate, setHueX, setHue }) => {
   const bar = useRef(null)
   const canvas = useRef(null)
 
@@ -451,7 +451,7 @@ const Hue = ({ hueX, offsetLeft, setHueX, setHue }) => {
 
   return (
     <HueWrapper ref={bar}>
-      <Handle left={hueX}>
+      <Handle left={hueX} animate={animate}>
         <Svg name='handle' />
       </Handle>
       <Canvas ref={canvas} />
@@ -470,7 +470,7 @@ The _Hue_ component has a handle that is actually an _Svg_ I made using [Boxy Sv
 
 <div class='filename'>Svg.js</div>
 
-```js
+```jsx
 import React from 'react'
 
 const Svg = ({ name, ...rest }) => {
@@ -532,7 +532,7 @@ The paint process begins with simply filling the canvas with the current `hue`. 
 
 <div class='filename'>usePaintSquare.js</div>
 
-```js
+```jsx
 import React, { useEffect } from 'react'
 import config from './config'
 
@@ -563,7 +563,7 @@ Now we need a way to convert the cursor position in the _Square_ to a _Saturatio
 
 <div class='filename'>utils.js</div>
 
-```js
+```jsx
 export const convertRGBtoHSL = rgb => {
   const r = rgb[0] / 255
   const g = rgb[1] / 255
@@ -608,7 +608,7 @@ With the groudwork laid down the _Square_ component can be implemented. _Square_
 
 <div class='filename'>Square.js</div>
 
-```js
+```jsx
 import React, { useRef, useEffect } from 'react'
 import styled from 'styled-components'
 import throttle from 'lodash.throttle'
@@ -651,7 +651,7 @@ export const Cross = styled.div.attrs(p => ({
   }
 `
 
-const Square = ({ hue, squareXY, setSquare, offsetTop, offsetLeft, setSquareXY }) => {
+const Square = ({ hue, squareXY, setSquare, offsetTop, offsetLeft, animate, setSquareXY }) => {
   const square = useRef(null)
   const canvas = useRef(null)
 
@@ -711,7 +711,7 @@ const Square = ({ hue, squareXY, setSquare, offsetTop, offsetLeft, setSquareXY }
 
   return (
     <SquareWrapper ref={square}>
-      <Cross top={squareXY[1]} left={squareXY[0]}>
+      <Cross top={squareXY[1]} left={squareXY[0]} animate={animate}>
         <Svg name='cross' />
       </Cross>
       <Canvas ref={canvas} />
@@ -728,7 +728,7 @@ With the values from _Square_ in hand the _Picker_ component can output a full _
 
 <div class='filename'>Picker.js</div>
 
-```js
+```jsx
 import React, { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
 import Modal from './Modal'
@@ -830,7 +830,7 @@ A wide variety of inputs can be added to this color picker to take in user data.
 
 <div class='filename'>Input.js</div>
 
-```js
+```jsx
 import React, { useRef } from 'react'
 import styled from 'styled-components'
 
@@ -901,7 +901,7 @@ New functions are needed to set the positions of the _Handle_ and _Cross_. You m
 
 <div class='filename'>Picker.js</div>
 
-```js
+```jsx
 import React, { useState, useRef, useEffect } from 'react'
 import styled from 'styled-components'
 import Modal from './Modal'
@@ -1029,6 +1029,7 @@ const Picker = () => {
               <Hue
                 hueX={hueX}
                 offsetLeft={offsetLeft}
+                animate={animate}
                 setHueX={setHueX}
                 setHue={setHue}
                 setAnimate={setAnimate}

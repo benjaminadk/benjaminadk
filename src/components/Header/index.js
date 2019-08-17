@@ -10,7 +10,7 @@ function getLinkName(pathname) {
 
 function Header(props) {
   const { title, links } = props.data.site.siteMetadata
-  console.log(props.pathname)
+
   return (
     <HeaderWrapper>
       <header>

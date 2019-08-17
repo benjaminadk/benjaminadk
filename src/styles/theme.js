@@ -15,27 +15,6 @@ const grey = [
   '#2E2E2E'
 ]
 
-const code = {
-  font: 'Roboto Mono',
-  text: '#e06c75',
-  string: '#98c379',
-  number: '#EEBA3F',
-  boolean: '#EEBA3F',
-  attribute: '#EEBA3F',
-  property: '#e0e0e0',
-  function: '#6BAEE6',
-  parameter: '#b0b0b0',
-  punctuation: '#cfcfcf',
-  keyword: ' #c678dd',
-  class: '#FFCA8A',
-  comment: '#8f8f8f',
-  variable: '#e0e0e0',
-  selector: '#c678dd',
-  namespace: '#FFCA8A',
-  inlineBg: grey[2],
-  inlineColor: grey[10]
-}
-
 export default {
   maxWidth: '800px',
   headerHeight: '100px',
@@ -43,9 +22,9 @@ export default {
   footerHeight: '100px',
   textFont: `Georgia, 'Times New Roman', Times, serif`,
   textColor: grey[13],
+  codeFont: `'Roboto Mono', monospace`,
   backgroundColor: grey[0],
   filenameColor: '#111111',
   highlightColor: '#252b31',
-  grey,
-  code
+  grey
 }

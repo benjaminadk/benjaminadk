@@ -1,6 +1,7 @@
 ---
 title: Gitmoji Commit
 description: VS Code extension for composing Gitmoji commit messages
+date: '2019-08-01'
 thumbnail: '../../../images/gitmoji.png'
 source: 'https://github.com/benjaminadk/emojigit'
 ---

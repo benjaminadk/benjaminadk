@@ -50,14 +50,20 @@ const getSchemaOrgJSONLD = ({ isBlogPost, url, title, image, description, datePu
           publisher: {
             '@type': 'Organization',
             url: 'https://benjaminadk.netlify.com',
-            logo: 'https://benjaminadk.netlify.com/icons/icon-512x512.png',
+            logo: {
+              '@type': 'ImageObject',
+              url: 'https://benjaminadk.netlify.com/icons/icon-512x512.png',
+              width: '512',
+              height: '512'
+            },
             name: 'Benjamin Brooke'
           },
           mainEntityOfPage: {
             '@type': 'WebSite',
             '@id': 'https://benjaminadk.netlify.com'
           },
-          datePublished
+          datePublished,
+          dateModified: datePublished
         }
       ]
     : schemaOrgJSONLD

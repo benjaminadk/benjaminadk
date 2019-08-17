@@ -1,8 +1,10 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../components/Layout'
-import { ProjectTitle } from './styles'
-import { Markdown } from '../Post/styles'
+import formatDate from '../../utils/formatDate'
+import { formatReadingTime } from '../../utils/formatReadingTime'
+import { PostTitle, Markdown } from '../Post/styles'
+import SEO from '../../components/seo'
 
 export const query = graphql`
   query($slug: String!) {
@@ -11,22 +13,36 @@ export const query = graphql`
       timeToRead
       frontmatter {
         title
+        description
+        date
       }
     }
   }
 `
 
-function Project({ data, location }) {
+const Project = ({ data, location }) => {
   const {
-    frontmatter: { title },
+    frontmatter: { title, description, date },
     html,
     timeToRead
   } = data.markdownRemark
   return (
     <Layout pathname={location.pathname}>
-      <ProjectTitle>
+      <SEO
+        subtitle={title}
+        description={description}
+        pathname={location.pathname}
+        isBlogPost={true}
+        datePublished={date}
+      />
+      <PostTitle>
         <div className='title'>{title}</div>
-      </ProjectTitle>
+        <div className='sub-title'>
+          <div className='date'>{formatDate(date)}</div>
+          <span>&bull;</span>
+          <div className='ttr'>{formatReadingTime(timeToRead)}</div>
+        </div>
+      </PostTitle>
       <Markdown dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   )

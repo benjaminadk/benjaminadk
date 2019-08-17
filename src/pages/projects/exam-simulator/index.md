@@ -1,6 +1,7 @@
 ---
 title: Exam Simulator
 description: JSON based, open source and free exam simulator
+date: '2019-08-01'
 thumbnail: '../../../images/exam-simulator.png'
 source: 'https://github.com/exam-simulator/simulator'
 ---
