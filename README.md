@@ -14,11 +14,12 @@ Articles, Projects & Visualizations
 
 ## Articles
 
-| Date       | Title                              |                                       Link                                        |
-| :--------- | :--------------------------------- | :-------------------------------------------------------------------------------: |
-| 2019-07-10 | SVG Icons With No Artistic Ability | [Link](https://benjaminadk.netlify.com/posts/svg-icons-with-no-artistic-ability/) |
-| 2019-08-02 | Save Time With Auto Hotkey         |     [Link](https://benjaminadk.netlify.com/posts/save-time-with-auto-hotkey/)     |
-| 2019-08-12 | How To Build A Color Picker        |        [Link](https://benjaminadk.netlify.com/how-to-build-a-color-picker)        |
+| Date       | Title                               |                                       Link                                        |
+| :--------- | :---------------------------------- | :-------------------------------------------------------------------------------: |
+| 2019-07-10 | SVG Icons With No Artistic Ability  | [Link](https://benjaminadk.netlify.com/posts/svg-icons-with-no-artistic-ability/) |
+| 2019-08-02 | Save Time With Auto Hotkey          |     [Link](https://benjaminadk.netlify.com/posts/save-time-with-auto-hotkey/)     |
+| 2019-08-12 | How To Build A Color Picker         |        [Link](https://benjaminadk.netlify.com/how-to-build-a-color-picker)        |
+| 2019-08-16 | Using Local Storage To Persist Data | [Link](https://benjaminadk.netlify.com/posts/using-local-storage-to-persist-data) |
 
 ## Projects
 
