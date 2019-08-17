@@ -69,7 +69,7 @@ export default ({ data, location }) => {
         isBlogPost={true}
         datePublished={date}
       />
-      <Layout>
+      <Layout pathname={location.pathname}>
         <PostTitle>
           <div className='title'>{title}</div>
           <div className='sub-title'>{formatDate(date)}</div>

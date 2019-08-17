@@ -17,13 +17,16 @@ Articles, Projects & Visualizations
 | Date       | Title                              |                                       Link                                        |
 | :--------- | :--------------------------------- | :-------------------------------------------------------------------------------: |
 | 2019-07-10 | SVG Icons With No Artistic Ability | [Link](https://benjaminadk.netlify.com/posts/svg-icons-with-no-artistic-ability/) |
+| 2019-08-02 | Save Time With Auto Hotkey         |     [Link](https://benjaminadk.netlify.com/posts/save-time-with-auto-hotkey/)     |
+| 2019-08-12 | How To Build A Color Picker        |        [Link](https://benjaminadk.netlify.com/how-to-build-a-color-picker)        |
 
 ## Projects
 
-| Name           | Description                                                            |                          Link                           |                      Source Code                      |
-| :------------- | :--------------------------------------------------------------------- | :-----------------------------------------------------: | :---------------------------------------------------: |
-| GifIt          | Record and edit GIFs from your desktop, webcam or built in white board | [Link](https://benjaminadk.netlify.com/projects/gifit/) |    [Source](https://github.com/benjaminadk/gifit)     |
-| Exam Simulator | JSON based, open source and free exam simulator                        |        [Link](https://exam-maker.herokuapp.com/)        | [Source](https://github.com/exam-simulator/simulator) |
+| Name           | Description                                                            |                                        Link                                        |                      Source Code                      |
+| :------------- | :--------------------------------------------------------------------- | :--------------------------------------------------------------------------------: | :---------------------------------------------------: |
+| GifIt          | Record and edit GIFs from your desktop, webcam or built in white board |              [Link](https://benjaminadk.netlify.com/projects/gifit/)               |    [Source](https://github.com/benjaminadk/gifit)     |
+| Exam Simulator | JSON based, open source and free exam simulator                        |                     [Link](https://exam-maker.herokuapp.com/)                      | [Source](https://github.com/exam-simulator/simulator) |
+| Gitmoji Commit | VS Code extension for composing Gitmoji commit messages                | [Link](https://marketplace.visualstudio.com/items?itemName=benjaminadk.emojis4git) |   [Source](https://github.com/benjaminadk/emojigit)   |
 
 ## Visualizations
 

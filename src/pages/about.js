@@ -1,15 +1,26 @@
 import React from 'react'
 import Layout from '../components/Layout'
+import styled from 'styled-components'
 
-export default function About() {
+export const Container = styled.div`
+  max-width: ${p => p.theme.maxWidth};
+  margin: 0 auto;
+  .title {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+`
+
+const About = props => {
   return (
-    <Layout>
-      <div>
-        <span role='img' aria-label='construction'>
-          🚧
-        </span>{' '}
-        Under Construction
-      </div>
+    <Layout pathname={props.location.pathname}>
+      <Container>
+        <div className='title'>About</div>
+        <div className='content'>I am a JavaScript developer.</div>
+      </Container>
     </Layout>
   )
 }
+
+export default About

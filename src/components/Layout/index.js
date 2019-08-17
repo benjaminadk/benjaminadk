@@ -30,7 +30,7 @@ const query = graphql`
   }
 `
 
-export default function Layout({ children }) {
+function Layout({ pathname, children }) {
   return (
     <StaticQuery
       query={query}
@@ -39,7 +39,7 @@ export default function Layout({ children }) {
           <GlobalStyle />
           <ThemeProvider theme={theme}>
             <StyledPage>
-              <Header data={data} />
+              <Header data={data} pathname={pathname} />
               <Main>{children}</Main>
               <Footer data={data} />
             </StyledPage>
@@ -49,3 +49,5 @@ export default function Layout({ children }) {
     />
   )
 }
+
+export default Layout

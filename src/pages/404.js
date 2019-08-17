@@ -1,8 +1,8 @@
 import React from 'react'
 import Layout from '../components/Layout'
 
-const NotFoundPage = () => (
-  <Layout>
+const NotFoundPage = props => (
+  <Layout pathname={props.location.pathname}>
     <div>
       <h1>NOT FOUND</h1>
       <p>You just hit a route that doesn&#39;t exist... the sadness.</p>

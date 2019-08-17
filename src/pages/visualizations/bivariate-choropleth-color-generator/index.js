@@ -163,7 +163,7 @@ export default ({ data, location }) => {
   }, [colorMode])
 
   return (
-    <Layout>
+    <Layout pathname={location.pathname}>
       <SEO
         subtitle={title}
         description={description}

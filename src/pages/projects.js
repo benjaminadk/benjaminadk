@@ -3,14 +3,6 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import ProjectList from '../components/ProjectList'
 
-export default function Projects({ data }) {
-  return (
-    <Layout>
-      <ProjectList projects={data.projects.edges} />
-    </Layout>
-  )
-}
-
 export const query = graphql`
   query ProjectsQuery {
     projects: allMarkdownRemark(filter: { fields: { slug: { regex: "/^/projects/" } } }) {
@@ -37,3 +29,13 @@ export const query = graphql`
     }
   }
 `
+
+function Projects({ data, location }) {
+  return (
+    <Layout pathname={location.pathname}>
+      <ProjectList projects={data.projects.edges} />
+    </Layout>
+  )
+}
+
+export default Projects

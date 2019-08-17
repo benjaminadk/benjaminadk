@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from './styles'
 
-export default function Footer({ data }) {
+function Footer({ data }) {
   const {
     author,
     social: { email, twitter, github }
@@ -23,3 +23,5 @@ export default function Footer({ data }) {
     </Container>
   )
 }
+
+export default Footer

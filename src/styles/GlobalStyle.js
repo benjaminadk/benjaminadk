@@ -58,6 +58,8 @@ html {
  */
 
 body {
+  height: 100vh;
+  overflow-y: scroll;
   margin: 0;
   font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }

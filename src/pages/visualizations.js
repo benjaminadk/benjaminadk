@@ -21,9 +21,9 @@ const visualizations = [
   }
 ]
 
-export default function Visualizations() {
+export default function Visualizations(props) {
   return (
-    <Layout>
+    <Layout pathname={props.location.pathname}>
       <VisualizationList visualizations={visualizations} />
     </Layout>
   )

@@ -1,23 +1,24 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-export const Container = styled.div`
+export const HeaderWrapper = styled.div`
   header {
     max-width: ${p => p.theme.maxWidth};
     height: ${p => p.theme.headerHeight};
     display: grid;
     align-items: center;
     margin: 0 auto;
-    border-bottom: 4px solid ${p => p.theme.textColor};
+    border-bottom: 5px solid ${p => p.theme.textColor};
   }
-  .nav {
-    height: ${p => p.theme.navHeight};
-    max-width: ${p => p.theme.maxWidth};
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 0 auto;
-  }
+`
+
+export const Navigation = styled.nav`
+  height: ${p => p.theme.navHeight};
+  max-width: ${p => p.theme.maxWidth};
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0 auto;
 `
 
 export const TitleLink = styled(Link)`
@@ -29,9 +30,10 @@ export const TitleLink = styled(Link)`
 `
 
 export const StyledLink = styled(Link)`
-  color: ${p => p.theme.grey[8]};
+  color: ${p => (p.active ? p.theme.textColor : p.theme.grey[6])};
   text-decoration: none;
   font-size: 20px;
+  font-weight: 600;
   padding-right: 20px;
   &:hover {
     color: ${p => p.theme.textColor};

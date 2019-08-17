@@ -1,19 +1,34 @@
 import React from 'react'
-import { Container, TitleLink, StyledLink } from './styles'
+import { HeaderWrapper, Navigation, TitleLink, StyledLink } from './styles'
 
-export default function Header({ data }) {
+function getLinkName(pathname) {
+  if (pathname === '/' || pathname.startsWith('/posts')) return 'Posts'
+  if (pathname.startsWith('/projects')) return 'Projects'
+  if (pathname.startsWith('/visualizations')) return 'Visualizations'
+  return 'About'
+}
+
+function Header(props) {
+  const { title, links } = props.data.site.siteMetadata
+  console.log(props.pathname)
   return (
-    <Container>
+    <HeaderWrapper>
       <header>
-        <TitleLink to='/'>{data.site.siteMetadata.author}</TitleLink>
+        <TitleLink to='/'>{title}</TitleLink>
       </header>
-      <div className='nav'>
-        {data.site.siteMetadata.links.map((link, i) => (
-          <StyledLink key={link.text} to={link.href}>
+      <Navigation>
+        {links.map((link, i) => (
+          <StyledLink
+            key={link.text}
+            to={link.href}
+            active={link.text === getLinkName(props.pathname) ? 1 : 0}
+          >
             {link.text}
           </StyledLink>
         ))}
-      </div>
-    </Container>
+      </Navigation>
+    </HeaderWrapper>
   )
 }
+
+export default Header

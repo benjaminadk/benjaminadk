@@ -121,3 +121,73 @@ The image below is a _GIF_ of the _Playback_ features in action. When the play b
 <img src="editor-4.gif" style='max-width: 800px;'>
 </div>
 ---
+
+### GIF Encoding
+
+The ability to encode _GIFs_ is a crucial feature of the application. Encoding is the process of writing a file that conforms to the [GIF Specification](https://www.w3.org/Graphics/GIF/spec-gif89a.txt) based on the images and durations captured by the various recorders. _GifIt_ takes two separate approaches to encoding _GIFs_. The default approach uses a library I wrote called [Gif Encoder 2](https://github.com/benjaminadk/gif-encoder-2). I built upon the existing _JavaScript_ _GIF_ encoding libraries by adding optimizations and the ability to use an additional algorithm. As a _GIF_ is encoded each image is analyzed and reduced to a palette of at most 256 colors. Each pixel in the original image is then mapped to a color from this palette. There is also a compression process that takes place to reduce the file size. My encoder adds the ability to reuse color palettes when consecutive images are similar. This can reduce overall process time. I also added the [Octree Algorithm](https://en.wikipedia.org/wiki/Octree) which takes a little more time on average, but also reduces the output file size.
+
+<div class='center'>
+<img src='durant.gif'>
+</div>
+
+Example from the _Gif Encoder 2_ documentation creating a _GIF_ from a directory of image files. This is essentially what takes place in the application.
+
+```js
+const { createCanvas, Image } = require('canvas')
+const { createWriteStream, readdir } = require('fs')
+const { promisify } = require('util')
+const path = require('path')
+const GIFEncoder = require('..')
+
+const readdirAsync = promisify(readdir)
+const imagesFolder = path.join(__dirname, 'input')
+
+async function createGif(algorithm) {
+  return new Promise(async resolve1 => {
+    // read image directory
+    const files = await readdirAsync(imagesFolder)
+
+    // find the width and height of the image
+    const [width, height] = await new Promise(resolve2 => {
+      const image = new Image()
+      image.onload = () => resolve2([image.width, image.height])
+      image.src = path.join(imagesFolder, files[0])
+    })
+
+    // base GIF filepath on which algorithm is being used
+    const dstPath = path.join(__dirname, 'output', `intermediate-${algorithm}.gif`)
+    // create a write stream for GIF data
+    const writeStream = createWriteStream(dstPath)
+    // when stream closes GIF is created so resolve promise
+    writeStream.on('close', () => {
+      resolve1()
+    })
+
+    const encoder = new GIFEncoder(width, height, algorithm)
+    // pipe encoder's read stream to our write stream
+    encoder.createReadStream().pipe(writeStream)
+    encoder.start()
+    encoder.setDelay(200)
+
+    const canvas = createCanvas(width, height)
+    const ctx = canvas.getContext('2d')
+
+    // draw an image for each file and add frame to encoder
+    for (const file of files) {
+      await new Promise(resolve3 => {
+        const image = new Image()
+        image.onload = () => {
+          ctx.drawImage(image, 0, 0)
+          encoder.addFrame(ctx)
+          resolve3()
+        }
+        image.src = path.join(imagesFolder, file)
+      })
+    }
+  })
+}
+
+createGif('neuquant')
+```
+
+The second approach to encoding involves using [FFmpeg](https://ffmpeg.org/), a cross platform audio/video library. _FFmpeg_ must be installed on the user's machine for this to work. The application will check to see if the executable is in the `PATH` variable when it loads. The user can also manually enter the path in options. _Node_ has the ability to run _FFmpeg_ as a child process and the resulting _GIFs_ are produced much faster and at smaller sizes than when using the _JavaScript_ implementation. Getting this method to work was a little tricky and I wouldn't call _FFmpeg_ beginner friendly.

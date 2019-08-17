@@ -88,7 +88,7 @@ export default ({ data, location }) => {
   }, [])
 
   return (
-    <Layout>
+    <Layout pathname={location.pathname}>
       <SEO
         subtitle={title}
         description={description}

@@ -4,13 +4,26 @@ import Layout from '../../components/Layout'
 import { ProjectTitle } from './styles'
 import { Markdown } from '../Post/styles'
 
-export default function Project({ data }) {
+export const query = graphql`
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      html
+      timeToRead
+      frontmatter {
+        title
+      }
+    }
+  }
+`
+
+function Project({ data, location }) {
   const {
     frontmatter: { title },
-    html
+    html,
+    timeToRead
   } = data.markdownRemark
   return (
-    <Layout>
+    <Layout pathname={location.pathname}>
       <ProjectTitle>
         <div className='title'>{title}</div>
       </ProjectTitle>
@@ -19,13 +32,4 @@ export default function Project({ data }) {
   )
 }
 
-export const query = graphql`
-  query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        title
-      }
-    }
-  }
-`
+export default Project

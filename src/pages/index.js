@@ -3,14 +3,6 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import PostList from '../components/PostList'
 
-export default function Homepage({ data }) {
-  return (
-    <Layout>
-      <PostList posts={data.posts.edges} />
-    </Layout>
-  )
-}
-
 export const query = graphql`
   query PostsQuery {
     posts: allMarkdownRemark(
@@ -49,3 +41,13 @@ export const query = graphql`
     }
   }
 `
+
+function Home(props) {
+  return (
+    <Layout pathname={props.location.pathname}>
+      <PostList posts={props.data.posts.edges} />
+    </Layout>
+  )
+}
+
+export default Home
