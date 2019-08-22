@@ -273,6 +273,8 @@ The update UI should look like this.
 
 Find the `// TODO` comment just above the `return` statement. This is where we will insert functions to manipulate our saved colors. The logical first step is to create a function that adds a new color. The _Picker_ already has a hook that updates the current `color` state variable any time the _Hue_, _Saturation_ or _Lightness_ changes. To add a color the function needs to find the first open index in the colors array. This is done by passing a callback to `Array.findIndex` that returns the first index found with a _falsey_ value. In other words, the first empty string. If the colors array is full of valid colors `-1` is returned. Once the index is found we make a copy of `colors` so state isn't mutated. All that is left to do is assign the value at index to `color` and call `setColors`.
 
+<div class='filename'>Picker.js</div>
+
 ```js
 function addColor() {
   let index = colors.findIndex(c => !c)
@@ -289,6 +291,8 @@ function addColor() {
 ### Remove Color
 
 To remove a color the right click event can be used. Its probably a good idea to confirm this action with the user before permanently removing the color. This can be done by assigning a value to `window.confirm`. Also calling `e.preventDefault()` stops the normal context menu from popping up. If the user confirms removal the `colors` array is copied once again. The `Array.splice` method replaces the current color with an empty string. In this case, the event as well as the index from the `Array.map` function are both passed as arguments.
+
+<div class='filename'>Picker.js</div>
 
 ```js
 function removeColor(e, i) {
@@ -308,6 +312,8 @@ function removeColor(e, i) {
 
 When a color is clicked the _Picker_ will shift to the correct values and the _HSL_ colors string will be copied to the clipboard. The function takes a `color` as a parameter and only executes its logic if the `color` is truthy. In other words, if the color square clicked has a value of `""` nothing happens. This first step is to parse the string being passed into it's individual values. `parseHSL` should be added to `utils.js` and imported into `Picker.js`.
 
+<div class='filename'>Picker.js</div>
+
 ```js
 function onColorClick(c) {
   if (c) {
@@ -322,6 +328,8 @@ function onColorClick(c) {
 
 This utility function uses a [Regular Expression]() with `Array.replace` to effectively remove any character that is not a digit or a comma. The remaining string is then split into an array and then mapped to numbers. To visualize the process image: `"hsla(h, s%, l%, a)" -> [h, s, l, a]`.
 
+<div class='filename'>utils.js</div>
+
 ```js
 export const parseHSL = color =>
   color
@@ -331,6 +339,8 @@ export const parseHSL = color =>
 ```
 
 Existing functions can now be used to set the various positions and values required by _Picker_. Finally, another utilty function copies the color string to the clipboard. This should also be added to `utils.js` and imported into `Picker.js`.
+
+<div class='filename'>utils.js</div>
 
 ```js
 export const copyToClipboard = input => {
@@ -374,6 +384,8 @@ export const copyToClipboard = input => {
 ## Color Picker in Action
 
 At this point the saved colors addition should be fully functional. Try adding, removing and clicking on saved colors to make sure everything is working as intended. The only catch is that when the page is reloaded (`Ctl/Cmd + R`) the saved colors disappear. Enter _Local Storage_. The following code should be inserted at the first `TODO` so it runs before everything else.
+
+<div class='filename'>Picker.js</div>
 
 ```js
 useEffect(() => {

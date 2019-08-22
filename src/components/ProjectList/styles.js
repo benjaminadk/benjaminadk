@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+import Media from '../../styles/Media'
 
 export const Container = styled.div`
   max-width: ${p => p.theme.maxWidth};
@@ -26,6 +27,10 @@ export const StyledLink = styled(Link)`
   .text {
     display: flex;
     align-items: center;
+    ${Media.phone`
+      flex-direction: column;
+      align-items: flex-start;
+    `}
   }
   .title {
     font-size: 18px;

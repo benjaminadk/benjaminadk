@@ -5,7 +5,10 @@ import ProjectList from '../components/ProjectList'
 
 export const query = graphql`
   query ProjectsQuery {
-    projects: allMarkdownRemark(filter: { fields: { slug: { regex: "/^/projects/" } } }) {
+    projects: allMarkdownRemark(
+      filter: { fields: { slug: { regex: "/^/projects/" } } }
+      sort: { fields: [frontmatter___title], order: ASC }
+    ) {
       totalCount
       edges {
         node {

@@ -1,18 +1,26 @@
 import styled from 'styled-components'
+import Media from '../../styles/Media'
 
 export const PostTitle = styled.div`
-  width: ${p => p.theme.maxWidth};
+  max-width: ${p => p.theme.maxWidth};
   margin: 10px auto 0;
   .title {
     font-size: 40px;
     font-weight: 600;
     color: ${p => p.theme.textColor};
+    ${Media.phone`
+      font-size: 30px;
+      line-height: 1.2;
+    `}
   }
   .sub-title {
     display: flex;
     align-items: center;
     color: ${p => p.theme.grey[8]};
     margin-top: -10px;
+    ${Media.phone`
+      margin-top: 0;
+    `}
     .date {
       margin-right: 10px;
       font-size: 18px;

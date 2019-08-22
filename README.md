@@ -23,11 +23,12 @@ Articles, Projects & Visualizations
 
 ## Projects
 
-| Name           | Description                                                            |                                        Link                                        |                      Source Code                      |
-| :------------- | :--------------------------------------------------------------------- | :--------------------------------------------------------------------------------: | :---------------------------------------------------: |
-| GifIt          | Record and edit GIFs from your desktop, webcam or built in white board |              [Link](https://benjaminadk.netlify.com/projects/gifit/)               |    [Source](https://github.com/benjaminadk/gifit)     |
-| Exam Simulator | JSON based, open source and free exam simulator                        |                     [Link](https://exam-maker.herokuapp.com/)                      | [Source](https://github.com/exam-simulator/simulator) |
-| Gitmoji Commit | VS Code extension for composing Gitmoji commit messages                | [Link](https://marketplace.visualstudio.com/items?itemName=benjaminadk.emojis4git) |   [Source](https://github.com/benjaminadk/emojigit)   |
+| Name            | Description                                                            |                                        Link                                        |                           Source Code                            |
+| :-------------- | :--------------------------------------------------------------------- | :--------------------------------------------------------------------------------: | :--------------------------------------------------------------: |
+| Anne's Handmade | Ecommerce site powered by React, GraphQL and Stripe                    |                    [Link](https://anneshandmade.herokuapp.com)                     | [Source](https://github.com/benjaminadk/annes-handmade-frontend) |
+| Exam Simulator  | JSON based, open source and free exam simulator                        |                     [Link](https://exam-maker.herokuapp.com/)                      |      [Source](https://github.com/exam-simulator/simulator)       |
+| GifIt           | Record and edit GIFs from your desktop, webcam or built in white board |              [Link](https://benjaminadk.netlify.com/projects/gifit/)               |          [Source](https://github.com/benjaminadk/gifit)          |
+| Gitmoji Commit  | VS Code extension for composing Gitmoji commit messages                | [Link](https://marketplace.visualstudio.com/items?itemName=benjaminadk.emojis4git) |        [Source](https://github.com/benjaminadk/emojigit)         |
 
 ## Visualizations
 
