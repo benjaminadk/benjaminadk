@@ -30,7 +30,7 @@ A good starting point is to research some of the history and structure of a _GIF
 
 ## My Use Case
 
-I have been playing around with [Electron](https://electronjs.org/) a lot lately and I decided to attempt a desktop application that could record the user's screen and then turn the captured images into a _GIF_. The _Electron_ environment combines the features of the browser, the the features of [Node](https://nodejs.org/en/), and _Electron's_ own APIs. This makes capturing the screen a frame at a time and then saving those images to disk possible. My project article [GifIt](https://benjaminbrooke.me/projects/gifit/) goes into more detail on that subject. At this point, my goal became to write my own library for _GIF_ encoding.
+I have been playing around with [Electron](https://electronjs.org/) a lot lately and I decided to attempt a desktop application that could record the user's screen and then turn the captured images into a _GIF_. The _Electron_ environment combines the features of the browser, the the features of [Node](https://nodejs.org/en/), and _Electron's_ own APIs. _Electron's_ `desktopCapturer` API makes capturing the user's screen a frame at a time and then saving those images to disk possible. Having these sequencial images is essential to this approach to _GIF_ encoding. My project article [GifIt](https://benjaminbrooke.me/projects/gifit/) goes into more detail on that subject, and the [GifIt Source Code](https://github.com/benjaminadk/gifit/tree/master/src/renderer/components/Recorder) is available if you want to check out how I went about recording the desktop. At this point, my goal became to write my own library for _GIF_ encoding.
 
 ## Existing Libraries
 

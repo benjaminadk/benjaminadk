@@ -14,12 +14,13 @@ Articles, Projects & Visualizations
 
 ## Articles
 
-| Date       | Title                               |                                       Link                                        |
-| :--------- | :---------------------------------- | :-------------------------------------------------------------------------------: |
-| 2019-07-10 | SVG Icons With No Artistic Ability  | [Link](https://benjaminadk.netlify.com/posts/svg-icons-with-no-artistic-ability/) |
-| 2019-08-02 | Save Time With Auto Hotkey          |     [Link](https://benjaminadk.netlify.com/posts/save-time-with-auto-hotkey/)     |
-| 2019-08-12 | How To Build A Color Picker         |        [Link](https://benjaminadk.netlify.com/how-to-build-a-color-picker)        |
-| 2019-08-16 | Using Local Storage To Persist Data | [Link](https://benjaminadk.netlify.com/posts/using-local-storage-to-persist-data) |
+| Date       | Title                               |                                    Link                                     |
+| :--------- | :---------------------------------- | :-------------------------------------------------------------------------: |
+| 2019-07-10 | SVG Icons With No Artistic Ability  | [Link](https://benjaminbrooke.me/posts/svg-icons-with-no-artistic-ability/) |
+| 2019-08-02 | Save Time With Auto Hotkey          |     [Link](https://benjaminbrooke.me/posts/save-time-with-auto-hotkey/)     |
+| 2019-08-12 | How To Build A Color Picker         |        [Link](https://benjaminbrooke.me/how-to-build-a-color-picker)        |
+| 2019-08-16 | Using Local Storage To Persist Data | [Link](https://benjaminbrooke.me/posts/using-local-storage-to-persist-data) |
+| 2019-08-24 | Encode GIFs With Node               |        [Link](https://benjaminbrooke.me/posts/encode-gifs-with-node)        |
 
 ## Projects
 
@@ -27,17 +28,17 @@ Articles, Projects & Visualizations
 | :-------------- | :--------------------------------------------------------------------- | :--------------------------------------------------------------------------------: | :--------------------------------------------------------------: |
 | Anne's Handmade | Ecommerce site powered by React, GraphQL and Stripe                    |                    [Link](https://anneshandmade.herokuapp.com)                     | [Source](https://github.com/benjaminadk/annes-handmade-frontend) |
 | Exam Simulator  | JSON based, open source and free exam simulator                        |                     [Link](https://exam-maker.herokuapp.com/)                      |      [Source](https://github.com/exam-simulator/simulator)       |
-| GifIt           | Record and edit GIFs from your desktop, webcam or built in white board |              [Link](https://benjaminadk.netlify.com/projects/gifit/)               |          [Source](https://github.com/benjaminadk/gifit)          |
+| GifIt           | Record and edit GIFs from your desktop, webcam or built in white board |                 [Link](https://benjaminbrooke.me/projects/gifit/)                  |          [Source](https://github.com/benjaminadk/gifit)          |
 | Gitmoji Commit  | VS Code extension for composing Gitmoji commit messages                | [Link](https://marketplace.visualstudio.com/items?itemName=benjaminadk.emojis4git) |        [Source](https://github.com/benjaminadk/emojigit)         |
 
 ## Visualizations
 
-| Date       | Title                                |                                            Link                                             |
-| :--------- | :----------------------------------- | :-----------------------------------------------------------------------------------------: |
-| 2019-07-13 | High School Clock                    |          [Link](https://benjaminadk.netlify.com/visualizations/high-school-clock)           |
-| 2019-07-17 | Bivariate Choropleth Color Generator | [Link](https://benjaminadk.netlify.com/visualizations/bivariate-choropleth-color-generator) |
-| 2019-07-18 | Minesweeper                          |             [Link](https://benjaminadk.netlify.com/visualizations/minesweeper)              |
-| 2019-07-23 | Simple Binary Search Tree            |      [Link](https://benjaminadk.netlify.com/visualizations/simple-binary-search-tree)       |
+| Date       | Title                                |                                         Link                                          |
+| :--------- | :----------------------------------- | :-----------------------------------------------------------------------------------: |
+| 2019-07-13 | High School Clock                    |          [Link](https://benjaminbrooke.me/visualizations/high-school-clock)           |
+| 2019-07-17 | Bivariate Choropleth Color Generator | [Link](https://benjaminbrooke.me/visualizations/bivariate-choropleth-color-generator) |
+| 2019-07-18 | Minesweeper                          |             [Link](https://benjaminbrooke.me/visualizations/minesweeper)              |
+| 2019-07-23 | Simple Binary Search Tree            |      [Link](https://benjaminbrooke.me/visualizations/simple-binary-search-tree)       |
 
 ## Tech Stack
 
