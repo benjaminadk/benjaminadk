@@ -6,7 +6,9 @@ thumbnail: '../../../images/gitmoji.png'
 source: 'https://github.com/benjaminadk/emojigit'
 ---
 
-[Gitmoji Commit](https://marketplace.visualstudio.com/items?itemName=benjaminadk.emojis4git) is an extension for [Visual Studio Code](https://code.visualstudio.com) that allows users to easily compose _Git_ `commit` messages with emojis. The default emoji mapping is based on [Gitmoji](https://gitmoji.carloscuesta.me/) where each emoji is associated with a certain type of commit. The purpose of the system as a whole is to make commit messages easy to identify by only looking at the emoji and not have to read the text in every message. A user can also supply their own emoji system via the settings in _VS Code_.
+[Source](https://github.com/benjaminadk/emojigit)
+
+_Gitmoji Commit_ is an extension for [Visual Studio Code](https://code.visualstudio.com) that allows users to easily compose _Git_ `commit` messages with emojis. The default emoji mapping is based on [Gitmoji](https://gitmoji.carloscuesta.me/) where each emoji is associated with a certain type of commit. The purpose of the system as a whole is to make commit messages easy to identify by only looking at the emoji and not have to read the text in every message. A user can also supply their own emoji system via the settings in _VS Code_.
 
 <img src='emojis.png'>
 
