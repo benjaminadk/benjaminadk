@@ -1084,3 +1084,9 @@ Thanks for reading! This article ended up much longer than I originally intended
 - Add inputs for other color formats
 - Add a parser that can accept a 3 or 6 digit _HEX_ code
 - Add an alpha bar to set the opacity of a color
+
+---
+
+## P.S.
+
+- Keep an eye on [my Color Picker Code Sandbox](https://codesandbox.io/s/color-picker-alpha-bar-ro198) as I will be adding features and refactoring code in the future.
