@@ -22,6 +22,7 @@ Articles, Projects & Visualizations
 | 2019-08-16 | Using Local Storage To Persist Data               |        [Link](https://benjaminbrooke.me/posts/using-local-storage-to-persist-data)        |
 | 2019-08-24 | Encode GIFs With Node                             |               [Link](https://benjaminbrooke.me/posts/encode-gifs-with-node)               |
 | 2019-09-01 | React Form Validation With GraphQl + Formik + Yup | [Link](https://benjaminbrooke.me/posts/react-form-validation-with-graphql-formik-and-yup) |
+| 2020-01-25 | Build A Command Line Application                  |             [Link](https://benjaminbrooke.me/posts/build-a-command-line-app)              |
 
 ## Projects
 

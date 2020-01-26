@@ -2,7 +2,14 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
-const getSchemaOrgJSONLD = ({ isBlogPost, url, title, image, description, datePublished }) => {
+const getSchemaOrgJSONLD = ({
+  isBlogPost,
+  url,
+  title,
+  image,
+  description,
+  datePublished
+}) => {
   const schemaOrgJSONLD = [
     {
       '@context': 'http://schema.org',
@@ -98,9 +105,12 @@ function SEO({
       `}
       render={data => {
         const metaTitle = `${title} | ${subtitle}`
-        const metaDescription = description || data.site.siteMetadata.description
+        const metaDescription =
+          description || data.site.siteMetadata.description
         const image =
-          metaImage && metaImage.src ? `${data.site.siteMetadata.siteUrl}${metaImage.src}` : null
+          metaImage && metaImage.src
+            ? `${data.site.siteMetadata.siteUrl}${metaImage.src}`
+            : null
         const metaUrl = `${data.site.siteMetadata.siteUrl}${pathname}`
 
         const schemaOrgJSONLD = getSchemaOrgJSONLD({
@@ -190,7 +200,9 @@ function SEO({
               )
               .concat(meta)}
           >
-            <script type='application/ld+json'>{JSON.stringify(schemaOrgJSONLD)}</script>
+            <script type='application/ld+json'>
+              {JSON.stringify(schemaOrgJSONLD)}
+            </script>
           </Helmet>
         )
       }}
@@ -201,7 +213,8 @@ function SEO({
 SEO.defaultProps = {
   title: 'Benjamin Brooke',
   subtitle: 'Home',
-  description: 'Post, Projects & Visualizations',
+  description:
+    'A software development portfolio and blog. Post, projects and visualizations are built with JavaScript, React, Node, D3, GraphQL, Electron, PHP, WordPress, to name just a few. ',
   meta: []
 }
 

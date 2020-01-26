@@ -1,11 +1,26 @@
 module.exports = {
   siteMetadata: {
     title: `Benjamin Brooke`,
-    description: `Posts, Projects & Visualizations`,
+    description: `A software development portfolio and blog. Post, projects and visualizations are built with JavaScript, React, Node, D3, GraphQL, Electron, PHP, WordPress, to name just a few. `,
     author: `Benjamin Brooke`,
-    siteUrl: process.env.URL ? `https://benjaminadk.netlify.com` : `http://benjaminbrooke.me`,
+    siteUrl: process.env.URL
+      ? `https://benjaminadk.netlify.com`
+      : `http://benjaminbrooke.me`,
     lang: 'en',
-    keywords: ['javascript', 'react', 'visualization', 'd3', 'tutorial', 'benjamin', 'brooke'],
+    keywords: [
+      'javascript',
+      'react',
+      'visualization',
+      'd3',
+      'tutorial',
+      'benjamin',
+      'brooke',
+      'programming',
+      'coding',
+      'blog',
+      'tutorial',
+      'wordpress'
+    ],
     social: {
       email: `benjaminadk@gmail.com`,
       twitter: `https://twitter.com/BenjaminBrooke3`,
