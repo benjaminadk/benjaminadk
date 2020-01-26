@@ -286,10 +286,10 @@ export const Markdown = styled.div`
     padding-right: 0.8em;
   }
   .command-line-prompt > span[data-user]:before {
-    content: '[' attr(data-user) '@' attr(data-host) '] $';
+    content: '[ ' attr(data-user) '@' attr(data-host) ' ] $';
   }
   .command-line-prompt > span[data-user='root']:before {
-    content: '[' attr(data-user) '@' attr(data-host) '] #';
+    content: '[ ' attr(data-user) '@' attr(data-host) ' ] #';
   }
   .command-line-prompt > span[data-prompt]:before {
     content: attr(data-prompt);

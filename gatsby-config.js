@@ -84,8 +84,8 @@ module.exports = {
               classPrefix: 'language-',
               showLineNumbers: false,
               prompt: {
-                user: 'benjamin',
-                host: 'superduper',
+                user: 'Benjamin',
+                host: 'WIN',
                 global: true
               }
             }
