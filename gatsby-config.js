@@ -3,9 +3,7 @@ module.exports = {
     title: `Benjamin Brooke`,
     description: `A software development portfolio and blog. Post, projects and visualizations are built with JavaScript, React, Node, D3, GraphQL, Electron, PHP, WordPress, to name just a few. `,
     author: `Benjamin Brooke`,
-    siteUrl: process.env.URL
-      ? `https://benjaminadk.netlify.com`
-      : `http://benjaminbrooke.me`,
+    siteUrl: `http://benjaminbrooke.me`,
     lang: 'en',
     keywords: [
       'javascript',
