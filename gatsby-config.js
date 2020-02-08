@@ -25,7 +25,8 @@ module.exports = {
       twitter: `https://twitter.com/BenjaminBrooke3`,
       twitterHandle: '@bendoyendo',
       youtube: `https://www.youtube.com/channel/UCZ86uFH5o_5yjjBEbi2oFSw`,
-      github: `https://github.com/benjaminadk`
+      github: `https://github.com/benjaminadk`,
+      linkedin: `https://www.linkedin.com/in/benjamin-brooke-957b2310a`
     },
     links: [
       { text: 'Posts', href: '/' },

@@ -24,6 +24,7 @@ const About = props => {
           performant SPAs.'
         pathname={props.location.pathname}
         isBlogPost={false}
+        itemList={false}
         datePublished='2020-01-01'
       />
       <Container>

@@ -19,7 +19,7 @@ export default {
   maxWidth: '800px',
   headerHeight: '100px',
   navHeight: '50px',
-  footerHeight: '100px',
+  footerHeight: '120px',
   textFont: `Georgia, 'Times New Roman', Times, serif`,
   textColor: grey[13],
   codeFont: `'Roboto Mono', monospace`,

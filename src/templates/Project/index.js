@@ -36,6 +36,7 @@ const Project = ({ data, location }) => {
         image={videoObject[4]}
         pathname={location.pathname}
         isBlogPost={true}
+        itemList={false}
         datePublished={date}
         videoObject={videoObject}
       />

@@ -80,7 +80,7 @@ const getSchemaOrgJSONLD = ({
       ]
     : []
 
-  const schemaItemList = [itemList] || []
+  const schemaItemList = itemList ? [itemList] : []
 
   return [
     ...schemaWebsite,

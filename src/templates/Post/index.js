@@ -44,6 +44,7 @@ const Post = ({ data, location }) => {
         image={image.childImageSharp.resize}
         pathname={location.pathname}
         isBlogPost={true}
+        itemList={false}
         datePublished={date}
       />
       <PostTitle>

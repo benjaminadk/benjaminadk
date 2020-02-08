@@ -79,8 +79,6 @@ I used the _Circle_ and the _Pie_ tool to create this:
   - The inner circle has a 1px white **stroke**
   - Match colors with a [Color Dropper Tool](https://github.com/benjaminadk/color-tool-remix)
 
-![google-icon](google-icon.png)
-
 ---
 
 ## Step 2 - Optimize your SVG

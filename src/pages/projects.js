@@ -37,7 +37,7 @@ export const query = graphql`
 `
 
 function Projects({ data, location }) {
-  const itemListElement = data.projects.edges.map((edge, i) => {
+  const itemListElements = data.projects.edges.map((edge, i) => {
     const {
       frontmatter: { title, description, videoObject, date },
       fields: { slug }
@@ -88,7 +88,7 @@ function Projects({ data, location }) {
   const itemList = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    itemListElement
+    ...itemListElements
   }
 
   return (

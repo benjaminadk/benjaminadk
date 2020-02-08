@@ -3,18 +3,20 @@ import { Container } from './styles'
 
 function Footer({ data }) {
   const {
-    author,
-    social: { email, twitter, github }
+    social: { email, twitter, github, linkedin }
   } = data.site.siteMetadata
   return (
     <Container>
       <div className='content'>
-        <div>{author}</div>
+        <span>Contact</span>
+        <a href={linkedin} target='_blank' rel='noopener noreferrer'>
+          linkedin@benjamin-brooke
+        </a>
         <a href={twitter} target='_blank' rel='noopener noreferrer'>
-          @bendoyendo
+          twitter@bendoyendo
         </a>
         <a href={github} target='_blank' rel='noopener noreferrer'>
-          github.com/benjaminadk
+          github@benjaminadk
         </a>
         <a href={`mailto:${email}`} target='_blank' rel='noopener noreferrer'>
           {email}
