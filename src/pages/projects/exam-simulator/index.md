@@ -4,6 +4,12 @@ description: JSON based, open source and free exam simulator
 date: '2019-08-01'
 thumbnail: '../../../images/exam-simulator.png'
 source: 'https://github.com/exam-simulator/simulator'
+videoObject:
+  - 'Exam Simulator Project Summary Video'
+  - 'Create, take and share exams with this desktop application. Study smarter, not harder.'
+  - ''
+  - ''
+  - 'https://benjaminadk-blog.s3-us-west-1.amazonaws.com/thumbnails/anneshandmade.png'
 ---
 
 [Source Code](https://github.com/exam-simulator/simulator)

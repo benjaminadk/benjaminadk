@@ -14,6 +14,7 @@ export const query = graphql`
       frontmatter {
         title
         description
+        videoObject
         date
       }
     }
@@ -22,18 +23,21 @@ export const query = graphql`
 
 const Project = ({ data, location }) => {
   const {
-    frontmatter: { title, description, date },
+    frontmatter: { title, description, date, videoObject },
     html,
     timeToRead
   } = data.markdownRemark
+
   return (
     <Layout pathname={location.pathname}>
       <SEO
         subtitle={title}
         description={description}
+        image={videoObject[4]}
         pathname={location.pathname}
         isBlogPost={true}
         datePublished={date}
+        videoObject={videoObject}
       />
       <PostTitle>
         <div className='title'>{title}</div>

@@ -4,17 +4,33 @@ description: Ecommerce site powered by React, GraphQL and Stripe
 date: '2019-08-21'
 thumbnail: '../../../images/annes-handmade.png'
 source: 'https://github.com/benjaminadk/annes-handmade-frontend'
+videoObject:
+  - 'Annes Handmade Project Summary Video'
+  - 'A full stack JavaScript application built with React, Graphql, Apollo and Stripe. Deployed to Digital Ocean in a Linux environment being served by Nginx.'
+  - 'https://youtu.be/Z1BBL3S8Ajw'
+  - 'https://www.youtube.com/embed/Z1BBL3S8Ajw'
+  - 'https://benjaminadk-blog.s3-us-west-1.amazonaws.com/thumbnails/anneshandmade.png'
 ---
 
-[Source Front End](https://github.com/benjaminadk/annes-handmade-frontend)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z1BBL3S8Ajw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[Source Back End](https://github.com/benjaminadk/annes-handmade-backend)
-
-[Live Site](https://anneshandmade.com)
+---
 
 _Anne's Handmade_ is a small business owned by a retiree in her 70s. I built this site to help supplement her income and to gain some experience building ecommerce websites. This was a great opportunity to integrate a wide range of features into a single application. My ultimate goal was to create a simple to use website for both the customer and business owner.
 
+---
+
 <img src='landing.png'>
+
+---
+
+## Links
+
+[Source Code For Front End](https://github.com/benjaminadk/annes-handmade-frontend)
+
+[Source Code For Back End](https://github.com/benjaminadk/annes-handmade-backend)
+
+[Live Site](https://anneshandmade.com)
 
 ---
 
@@ -232,4 +248,4 @@ Only users with the `ADMIN` role can access the powerful _Admin Dashboard_. From
 
 ### Deployment
 
-Currently, _Anne's Handmade_ is deployed on the free tier of [Heroku](https://www.heroku.com/). This is not ideal in terms of performance. Using this setup there are three separate servers - one each for the front end, back end and database, all of which go into sleep mode when not being used. This means that there is considerable loading time when the site is visitted for the first time after a period on inactivity. In the future I hope the business owner will let me devote more resources to deployment.
+Currently, _Anne's Handmade_ is deployed to a Linux based server on Digital Ocean and runs really fast for only \$5 per month. Granted this site isn't seeing the same amount of traffic as Amazon, but I was impressed with the affordability when compared to other eCommerce solutions. I am able to SSH or login remotely to install and configure all the necessary components of the live site.

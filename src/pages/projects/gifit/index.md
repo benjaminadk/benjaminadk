@@ -4,6 +4,12 @@ description: Record from your desktop, webcam or white board
 date: '2019-08-01'
 thumbnail: '../../../images/gifit.png'
 source: 'https://github.com/benjaminadk/gifit'
+videoObject:
+  - 'GifIt Project Summary Video'
+  - 'Record and edit GIFs with this desktop software. Features include a frame-by-frame editor, text and shape overlays, borders, duplicate removal, rotation, cropping, watermarks, and much more.'
+  - ''
+  - ''
+  - 'https://benjaminadk-blog.s3-us-west-1.amazonaws.com/thumbnails/anneshandmade.png'
 ---
 
 [Source](https://github.com/benjaminadk/gifit)
@@ -158,7 +164,11 @@ async function createGif(algorithm) {
     })
 
     // base GIF filepath on which algorithm is being used
-    const dstPath = path.join(__dirname, 'output', `intermediate-${algorithm}.gif`)
+    const dstPath = path.join(
+      __dirname,
+      'output',
+      `intermediate-${algorithm}.gif`
+    )
     // create a write stream for GIF data
     const writeStream = createWriteStream(dstPath)
     // when stream closes GIF is created so resolve promise

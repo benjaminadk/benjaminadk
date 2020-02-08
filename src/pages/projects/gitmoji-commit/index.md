@@ -4,6 +4,16 @@ description: VS Code extension for composing Gitmoji commit messages
 date: '2019-08-01'
 thumbnail: '../../../images/gitmoji.png'
 source: 'https://github.com/benjaminadk/emojigit'
+videoObject:
+  - 'Gitmoji Commit Project Summary Video'
+  - 'An extension for Visual Studio Code that helps to compose Git commit messages by adding meaningful emojis.'
+  - 'https://youtu.be/PKSmTijO8hs'
+  - 'https://www.youtube.com/embed/PKSmTijO8hs'
+  - 'https://benjaminadk-blog.s3-us-west-1.amazonaws.com/thumbnails/gitmoji.png'
+---
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PKSmTijO8hs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ---
 
 [Source](https://github.com/benjaminadk/emojigit)

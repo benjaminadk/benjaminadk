@@ -15,12 +15,13 @@ module.exports = {
       'brooke',
       'programming',
       'coding',
+      'software',
       'blog',
       'tutorial',
       'wordpress'
     ],
     social: {
-      email: `benjaminadk@gmail.com`,
+      email: `ben@brokeveganguy.com`,
       twitter: `https://twitter.com/BenjaminBrooke3`,
       twitterHandle: '@bendoyendo',
       youtube: `https://www.youtube.com/channel/UCZ86uFH5o_5yjjBEbi2oFSw`,

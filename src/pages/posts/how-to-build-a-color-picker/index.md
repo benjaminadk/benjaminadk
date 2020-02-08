@@ -1,5 +1,5 @@
 ---
-title: How To Build A Color Picker
+title: How To Build A Color Picker With React
 date: '2019-08-12'
 thumbnail: '../../../images/react.png'
 featured: './featured.png'
@@ -324,7 +324,12 @@ const Picker = () => {
           <PickerOuter>
             <PickerInner>
               <div>sqaure</div>
-              <Hue hueX={hueX} offsetLeft={offsetLeft} setHueX={setHueX} setHue={setHue} />
+              <Hue
+                hueX={hueX}
+                offsetLeft={offsetLeft}
+                setHueX={setHueX}
+                setHue={setHue}
+              />
               <div>inputs</div>
             </PickerInner>
           </PickerOuter>
@@ -409,7 +414,10 @@ const Hue = ({ hueX, offsetLeft, animate, setHueX, setHue }) => {
     function computePosition(e) {
       return Math.max(
         barSize / -2,
-        Math.min(e.clientX - offsetLeft + squareSize / 2 - barSize / 2, squareSize - barSize / 2)
+        Math.min(
+          e.clientX - offsetLeft + squareSize / 2 - barSize / 2,
+          squareSize - barSize / 2
+        )
       )
     }
 
@@ -498,8 +506,14 @@ const Svg = ({ name, ...rest }) => {
       case 'handle':
         return (
           <>
-            <path d='M34.736998 0v49.921h-5.578V0zm-16.737 49.921V0h5.578v49.921z' fill='#dfdfdf' />
-            <path fill='#363636' d='M31.371873.078V50h-2.316V.078zM23.470873 0v49.922h-2.316V0z' />
+            <path
+              d='M34.736998 0v49.921h-5.578V0zm-16.737 49.921V0h5.578v49.921z'
+              fill='#dfdfdf'
+            />
+            <path
+              fill='#363636'
+              d='M31.371873.078V50h-2.316V.078zM23.470873 0v49.922h-2.316V0z'
+            />
           </>
         )
 
@@ -651,7 +665,15 @@ export const Cross = styled.div.attrs(p => ({
   }
 `
 
-const Square = ({ hue, squareXY, setSquare, offsetTop, offsetLeft, animate, setSquareXY }) => {
+const Square = ({
+  hue,
+  squareXY,
+  setSquare,
+  offsetTop,
+  offsetLeft,
+  animate,
+  setSquareXY
+}) => {
   const square = useRef(null)
   const canvas = useRef(null)
 
@@ -671,7 +693,10 @@ const Square = ({ hue, squareXY, setSquare, offsetTop, offsetLeft, animate, setS
       )
       const y = Math.max(
         crossSize / -2,
-        Math.min(e.clientY - offsetTop + squareSize / 2 + crossSize / 2, squareSize - crossSize / 2)
+        Math.min(
+          e.clientY - offsetTop + squareSize / 2 + crossSize / 2,
+          squareSize - crossSize / 2
+        )
       )
 
       return [x, y]
@@ -766,7 +791,10 @@ const Picker = () => {
   const [hue, setHue] = useState(180)
   const [hueX, setHueX] = useState(() => squareSize / 2 - barSize / 2)
   const [square, setSquare] = useState([100, 50])
-  const [squareXY, setSquareXY] = useState(() => [squareSize - crossSize / 2, crossSize / -2])
+  const [squareXY, setSquareXY] = useState(() => [
+    squareSize - crossSize / 2,
+    crossSize / -2
+  ])
   const [offsetTop, setOffsetTop] = useState(0)
   const [offsetLeft, setOffsetLeft] = useState(0)
   const [color, setColor] = useState(`hsla(180, 100%, 50%, 1)`)
@@ -809,7 +837,12 @@ const Picker = () => {
                 setSquare={setSquare}
                 setSquareXY={setSquareXY}
               />
-              <Hue hueX={hueX} offsetLeft={offsetLeft} setHueX={setHueX} setHue={setHue} />
+              <Hue
+                hueX={hueX}
+                offsetLeft={offsetLeft}
+                setHueX={setHueX}
+                setHue={setHue}
+              />
               <div>inputs</div>
             </PickerInner>
           </PickerOuter>
@@ -889,7 +922,13 @@ const Input = ({ label, value, max, min, defaultValue, setValue }) => {
   return (
     <InputWrapper>
       <label>{label}</label>
-      <input ref={input} value={value} onChange={onChange} onBlur={onBlur} autoFocus={false} />
+      <input
+        ref={input}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
+        autoFocus={false}
+      />
     </InputWrapper>
   )
 }
@@ -962,7 +1001,10 @@ const Picker = () => {
   const [hue, setHue] = useState(180)
   const [hueX, setHueX] = useState(() => squareSize / 2 - barSize / 2)
   const [square, setSquare] = useState([100, 50])
-  const [squareXY, setSquareXY] = useState(() => [squareSize - crossSize / 2, crossSize / -2])
+  const [squareXY, setSquareXY] = useState(() => [
+    squareSize - crossSize / 2,
+    crossSize / -2
+  ])
   const [offsetTop, setOffsetTop] = useState(0)
   const [offsetLeft, setOffsetLeft] = useState(0)
   const [color, setColor] = useState(`hsla(180, 100%, 50%, 1)`)

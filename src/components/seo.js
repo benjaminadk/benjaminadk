@@ -3,77 +3,91 @@ import { StaticQuery, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 const getSchemaOrgJSONLD = ({
-  isBlogPost,
-  url,
   title,
-  image,
   description,
+  url,
+  author,
+  siteUrl,
+  keywords,
+  image,
+  videoObject,
+  isBlogPost,
+  itemList,
   datePublished
 }) => {
-  const schemaOrgJSONLD = [
+  const schemaWebsite = [
     {
       '@context': 'http://schema.org',
       '@type': 'WebSite',
       url,
       name: title,
-      alternateName: 'Benjamin Brooke'
+      alternateName: author
     }
   ]
 
-  return isBlogPost
+  const schemaVideoObject = videoObject
     ? [
-        ...schemaOrgJSONLD,
         {
           '@context': 'http://schema.org',
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              item: {
-                '@id': url,
-                name: title,
-                image
-              }
-            }
-          ]
-        },
+          '@type': 'VideoObject',
+          name: videoObject[0],
+          description: videoObject[1],
+          contentUrl: videoObject[2],
+          embedUrl: videoObject[3],
+          thumbnailUrl: videoObject[4],
+          uploadDate: datePublished
+        }
+      ]
+    : []
+
+  const schemaBlogPosting = isBlogPost
+    ? [
         {
           '@context': 'http://schema.org',
           '@type': 'BlogPosting',
           url,
           name: title,
-          alternateName: 'Benjamin Brooke',
+          alternateName: author,
           headline: title,
           image: {
             '@type': 'ImageObject',
             url: image
           },
           description,
+          keywords,
           author: {
             '@type': 'Person',
-            name: 'Benjamin Brooke'
+            name: author
           },
           publisher: {
             '@type': 'Organization',
-            url: 'https://benjaminadk.netlify.com',
+            url: siteUrl,
             logo: {
               '@type': 'ImageObject',
-              url: 'https://benjaminadk.netlify.com/icons/icon-512x512.png',
+              url: `${siteUrl}/icons/icon-512x512.png`,
               width: '512',
               height: '512'
             },
-            name: 'Benjamin Brooke'
+            name: author
           },
           mainEntityOfPage: {
             '@type': 'WebSite',
-            '@id': 'https://benjaminadk.netlify.com'
+            '@id': siteUrl
           },
           datePublished,
           dateModified: datePublished
         }
       ]
-    : schemaOrgJSONLD
+    : []
+
+  const schemaItemList = [itemList] || []
+
+  return [
+    ...schemaWebsite,
+    ...schemaBlogPosting,
+    ...schemaVideoObject,
+    ...schemaItemList
+  ]
 }
 
 function SEO({
@@ -84,6 +98,8 @@ function SEO({
   image: metaImage,
   pathname,
   isBlogPost,
+  videoObject,
+  itemList,
   datePublished
 }) {
   return (
@@ -104,21 +120,33 @@ function SEO({
         }
       `}
       render={data => {
+        const { author, keywords, siteUrl } = data.site.siteMetadata
+
         const metaTitle = `${title} | ${subtitle}`
+
         const metaDescription =
           description || data.site.siteMetadata.description
+
         const image =
           metaImage && metaImage.src
-            ? `${data.site.siteMetadata.siteUrl}${metaImage.src}`
+            ? `${siteUrl}${metaImage.src}`
+            : videoObject
+            ? metaImage
             : null
-        const metaUrl = `${data.site.siteMetadata.siteUrl}${pathname}`
+
+        const metaUrl = `${siteUrl}${pathname}`
 
         const schemaOrgJSONLD = getSchemaOrgJSONLD({
-          isBlogPost,
-          url: metaUrl,
           title: metaTitle,
-          image,
           description: metaDescription,
+          url: metaUrl,
+          author,
+          siteUrl,
+          keywords,
+          image,
+          videoObject,
+          isBlogPost,
+          itemList,
           datePublished
         })
 
@@ -219,3 +247,19 @@ SEO.defaultProps = {
 }
 
 export default SEO
+
+// {
+//   '@context': 'http://schema.org',
+//   '@type': 'BreadcrumbList',
+//   itemListElement: [
+//     {
+//       '@type': 'ListItem',
+//       position: 1,
+//       item: {
+//         '@id': url,
+//         name: title,
+//         image
+//       }
+//     }
+//   ]
+// },
