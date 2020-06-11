@@ -15,7 +15,7 @@ export default function PostList({ posts }) {
             fields: { slug }
           } = post.node
           return (
-            <StyledLink key={title} to={slug}>
+            <StyledLink key={title} to={slug + '/'}>
               <Img
                 className='thumbnail'
                 fixed={thumbnail.childImageSharp.fixed}
