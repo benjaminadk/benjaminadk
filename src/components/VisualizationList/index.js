@@ -7,7 +7,7 @@ export default function VisualizationList({ visualizations }) {
       <div className='title'>Visualizations</div>
       <div className='visualizations'>
         {visualizations.map(vis => (
-          <StyledLink key={vis.title} to={`/visualizations/${vis.slug}`}>
+          <StyledLink key={vis.title} to={`/visualizations/${vis.slug}/`}>
             {vis.title}
           </StyledLink>
         ))}

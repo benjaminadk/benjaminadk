@@ -12,7 +12,7 @@ export default function ProjectList({ projects }) {
           fields: { slug }
         } = project.node
         return (
-          <StyledLink key={title} to={slug}>
+          <StyledLink key={title} to={slug + '/'}>
             <Img className='thumbnail' fixed={thumbnail.childImageSharp.fixed} />
             <div className='text'>
               <div className='title'>{title}</div>
