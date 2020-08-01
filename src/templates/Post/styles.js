@@ -72,9 +72,11 @@ export const Markdown = styled.div`
     font-size: 18px;
   }
   blockquote {
-    border-left: 4px solid ${p => p.theme.grey[5]};
-    padding: 0 15px;
-    color: ${p => p.theme.grey[5]};
+    border-left: 4px solid ${p => p.theme.grey[10]};
+    padding: 20px 15px;
+    background-color: #fff;
+    color: ${p => p.theme.grey[10]};
+    box-shadow: ${p => p.theme.shadows[0]};
   }
   blockquote > :first-child {
     margin-top: 0;

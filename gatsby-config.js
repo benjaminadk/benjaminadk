@@ -83,12 +83,12 @@ module.exports = {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: 'language-',
-              showLineNumbers: false,
-              prompt: {
-                user: 'Benjamin',
-                host: 'WIN',
-                global: true
-              }
+              showLineNumbers: false
+              // prompt: {
+              //   user: 'Benjamin',
+              //   host: 'WIN',
+              //   global: true
+              // }
             }
           }
         ]
