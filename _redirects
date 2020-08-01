@@ -1,4 +1,27 @@
 # These rules will change if you change your site’s custom domains or HTTPS settings
 
 # Redirect default Netlify subdomain to primary domain
-https://benjaminadk.netlify.com/* https://benjaminbrooke.me/:splat 301!
+# https://benjaminadk.netlify.com/* https://benjaminbrooke.me/:splat 301!
+https://benjaminbrooke.me https://bvgsoftware.com 301!
+https://benjaminbrooke.me/projects https://bvgsoftware.com 301!
+https://benjaminbrooke.me/visualizations https://bvgsoftware.com 301!
+https://benjaminbrooke.me/about https://bvgsoftware.com 301!
+https://benjaminbrooke.me/posts/build-a-command-line-app/ https://bvgsoftware.com/posts/how-to-build-a-command-line-application 301!
+https://benjaminbrooke.me/posts/react-form-validation-with-graphql-formik-and-yup/ https://bvgsoftware.com/posts/react-form-validation-with-formik-graphql-yup 301!
+https://benjaminbrooke.me/posts/encode-gifs-with-node/ https://bvgsoftware.com/posts/gitmoji-commit 301!
+https://benjaminbrooke.me/posts/using-local-storage-to-persist-data/ https://bvgsoftware.com/posts/how-to-use-local-storage-to-persist-data 301!
+https://benjaminbrooke.me/posts/how-to-build-a-color-picker/ https://bvgsoftware.com/posts/how-to-build-a-color-picker 301!
+https://benjaminbrooke.me/posts/save-time-with-auto-hotkey/ https://bvgsoftware.com/posts/autohotkey-to-save-development-time 301!
+https://benjaminbrooke.me/posts/svg-icons-with-no-artistic-ability/ https://bvgsoftware.com/posts/svg-icon-with-no-artistic-ability 301!
+https://benjaminbrooke.me/visualizations/high-school-clock/ https://bvgsoftware.com/posts/high-school-clock 301!
+https://benjaminbrooke.me/visualizations//high-school-clock/ https://bvgsoftware.com/posts/high-school-clock 301!
+https://benjaminbrooke.me/visualizations/minesweeper/ https://bvgsoftware.com/posts/minesweeper 301!
+https://benjaminbrooke.me/visualizations//minesweeper/ https://bvgsoftware.com/posts/minesweeper 301!
+https://benjaminbrooke.me/visualizations/simple-binary-search-tree/ https://bvgsoftware.com/posts/simple-binary-search-tree 301!
+https://benjaminbrooke.me/visualizations//simple-binary-search-tree/ https://bvgsoftware.com/posts/simple-binary-search-tree 301!
+https://benjaminbrooke.me/visualizations/bivariate-choropleth-color-generator/ https://bvgsoftware.com 301!
+https://benjaminbrooke.me/visualizations//bivariate-choropleth-color-generator/ https://bvgsoftware.com 301!
+https://benjaminbrooke.me/projects/annes-handmade/ https://bvgsoftware.com 301!
+https://benjaminbrooke.me/projects/exam-simulator/ https://bvgsoftware.com 301!
+https://benjaminbrooke.me/projects/gifit/ https://bvgsoftware.com 301!
+https://benjaminbrooke.me/projects/gitmoji-commit/ https://bvgsoftware.com 301!
